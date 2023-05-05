@@ -1,0 +1,2279 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : system_top
+Version: O-2018.06-SP1
+Date   : Wed Apr 26 17:16:13 2023
+****************************************
+
+Operating Conditions: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c   Library: scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+Wire Load Model Mode: top
+
+  Startpoint: register_file_inst/memory_reg[0][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[0]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[0][7]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[0][7]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U77/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U172/Y (INVX2M)                      0.57       1.48 r
+  register_file_inst/register0[7] (register_file)         0.00       1.48 r
+  alu_inst/A[7] (alu)                                     0.00       1.48 r
+  alu_inst/U21/Y (BUFX4M)                                 0.92       2.40 r
+  alu_inst/U74/Y (INVX8M)                                 0.72       3.12 f
+  alu_inst/U309/Y (AOI211X4M)                             0.98       4.09 r
+  alu_inst/U201/Y (NOR2BX4M)                              0.34       4.44 f
+  alu_inst/U71/Y (OAI2BB1X2M)                             0.42       4.86 f
+  alu_inst/U106/Y (AND3X4M)                               0.38       5.23 f
+  alu_inst/U68/Y (MX2X4M)                                 0.44       5.68 f
+  alu_inst/U141/Y (AOI222X2M)                             1.00       6.68 r
+  alu_inst/U313/Y (OAI2BB2X4M)                            0.28       6.95 f
+  alu_inst/U66/Y (AND2X6M)                                0.37       7.32 f
+  alu_inst/U18/Y (CLKMX2X4M)                              0.51       7.84 r
+  alu_inst/U65/Y (OAI21X2M)                               0.32       8.16 f
+  alu_inst/U315/Y (OAI2BB1X4M)                            0.47       8.63 r
+  alu_inst/U202/Y (AOI222X4M)                             0.28       8.91 f
+  alu_inst/U93/Y (OAI2BB2X4M)                             0.42       9.33 r
+  alu_inst/U243/Y (NOR2BX8M)                              0.67      10.00 r
+  alu_inst/U92/Y (MX2X6M)                                 0.52      10.51 r
+  alu_inst/U64/Y (NAND2X2M)                               0.27      10.78 f
+  alu_inst/U259/Y (AND2X2M)                               0.36      11.14 f
+  alu_inst/U260/Y (AND2X2M)                               0.47      11.62 f
+  alu_inst/U286/Y (OAI21X4M)                              0.60      12.21 r
+  alu_inst/U131/Y (OAI2B2X4M)                             0.28      12.50 f
+  alu_inst/U319/Y (OAI2BB2X4M)                            0.38      12.87 r
+  alu_inst/U130/Y (AND4X6M)                               0.61      13.48 r
+  alu_inst/U205/Y (MX2X2M)                                0.55      14.04 r
+  alu_inst/U128/CO (ADDFX2M)                              0.72      14.76 r
+  alu_inst/U127/CO (ADDFX2M)                              0.47      15.22 r
+  alu_inst/U126/CO (ADDFX2M)                              0.47      15.69 r
+  alu_inst/U326/CO (ADDFX2M)                              0.47      16.16 r
+  alu_inst/U14/CO (ADDFX1M)                               0.55      16.71 r
+  alu_inst/U61/Y (AND3X6M)                                0.63      17.34 r
+  alu_inst/U210/Y (MX2X2M)                                0.75      18.09 r
+  alu_inst/U222/Y (NAND2X2M)                              0.74      18.83 f
+  alu_inst/U238/Y (OAI21X2M)                              0.64      19.48 r
+  alu_inst/U122/Y (AOI21X2M)                              0.37      19.85 f
+  alu_inst/U50/Y (OAI21X2M)                               0.32      20.17 r
+  alu_inst/U11/Y (AND2X6M)                                0.70      20.87 r
+  alu_inst/U9/Y (CLKMX2X2M)                               0.69      21.56 f
+  alu_inst/U7/Y (NOR2X1M)                                 0.79      22.34 r
+  alu_inst/U52/Y (NOR2X4M)                                0.30      22.65 f
+  alu_inst/U231/Y (AOI21X2M)                              0.57      23.22 r
+  alu_inst/U79/Y (OAI21X4M)                               0.27      23.49 f
+  alu_inst/U78/Y (AOI21X4M)                               0.33      23.82 r
+  alu_inst/U365/Y (OAI211X2M)                             0.36      24.18 f
+  alu_inst/U77/Y (OAI2BB1X2M)                             0.41      24.60 f
+  alu_inst/alu_result_reg[0]/D (DFFRQX1M)                 0.00      24.60 f
+  data arrival time                                                 24.60
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[0]/CK (DFFRQX1M)                0.00      24.80 r
+  library setup time                                     -0.16      24.64
+  data required time                                                24.64
+  --------------------------------------------------------------------------
+  data required time                                                24.64
+  data arrival time                                                -24.60
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.04
+
+
+  Startpoint: register_file_inst/memory_reg[0][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[1]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[0][7]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[0][7]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U77/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U172/Y (INVX2M)                      0.57       1.48 r
+  register_file_inst/register0[7] (register_file)         0.00       1.48 r
+  alu_inst/A[7] (alu)                                     0.00       1.48 r
+  alu_inst/U21/Y (BUFX4M)                                 0.92       2.40 r
+  alu_inst/U74/Y (INVX8M)                                 0.72       3.12 f
+  alu_inst/U309/Y (AOI211X4M)                             0.98       4.09 r
+  alu_inst/U201/Y (NOR2BX4M)                              0.34       4.44 f
+  alu_inst/U71/Y (OAI2BB1X2M)                             0.42       4.86 f
+  alu_inst/U106/Y (AND3X4M)                               0.38       5.23 f
+  alu_inst/U68/Y (MX2X4M)                                 0.44       5.68 f
+  alu_inst/U141/Y (AOI222X2M)                             1.00       6.68 r
+  alu_inst/U313/Y (OAI2BB2X4M)                            0.28       6.95 f
+  alu_inst/U66/Y (AND2X6M)                                0.37       7.32 f
+  alu_inst/U18/Y (CLKMX2X4M)                              0.51       7.84 r
+  alu_inst/U65/Y (OAI21X2M)                               0.32       8.16 f
+  alu_inst/U315/Y (OAI2BB1X4M)                            0.47       8.63 r
+  alu_inst/U202/Y (AOI222X4M)                             0.28       8.91 f
+  alu_inst/U93/Y (OAI2BB2X4M)                             0.42       9.33 r
+  alu_inst/U243/Y (NOR2BX8M)                              0.67      10.00 r
+  alu_inst/U92/Y (MX2X6M)                                 0.52      10.51 r
+  alu_inst/U64/Y (NAND2X2M)                               0.27      10.78 f
+  alu_inst/U259/Y (AND2X2M)                               0.36      11.14 f
+  alu_inst/U260/Y (AND2X2M)                               0.47      11.62 f
+  alu_inst/U286/Y (OAI21X4M)                              0.60      12.21 r
+  alu_inst/U131/Y (OAI2B2X4M)                             0.28      12.50 f
+  alu_inst/U319/Y (OAI2BB2X4M)                            0.38      12.87 r
+  alu_inst/U130/Y (AND4X6M)                               0.61      13.48 r
+  alu_inst/U205/Y (MX2X2M)                                0.55      14.04 r
+  alu_inst/U128/CO (ADDFX2M)                              0.72      14.76 r
+  alu_inst/U127/CO (ADDFX2M)                              0.47      15.22 r
+  alu_inst/U126/CO (ADDFX2M)                              0.47      15.69 r
+  alu_inst/U326/CO (ADDFX2M)                              0.47      16.16 r
+  alu_inst/U14/CO (ADDFX1M)                               0.55      16.71 r
+  alu_inst/U61/Y (AND3X6M)                                0.63      17.34 r
+  alu_inst/U210/Y (MX2X2M)                                0.75      18.09 r
+  alu_inst/U222/Y (NAND2X2M)                              0.74      18.83 f
+  alu_inst/U238/Y (OAI21X2M)                              0.64      19.48 r
+  alu_inst/U122/Y (AOI21X2M)                              0.37      19.85 f
+  alu_inst/U50/Y (OAI21X2M)                               0.32      20.17 r
+  alu_inst/U11/Y (AND2X6M)                                0.70      20.87 r
+  alu_inst/U461/Y (AOI211X2M)                             0.41      21.28 f
+  alu_inst/U3/Y (OAI2BB2X1M)                              0.71      21.98 r
+  alu_inst/alu_result_reg[1]/D (DFFRQX1M)                 0.00      21.98 r
+  data arrival time                                                 21.98
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[1]/CK (DFFRQX1M)                0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -21.98
+  --------------------------------------------------------------------------
+  slack (MET)                                                        2.39
+
+
+  Startpoint: register_file_inst/memory_reg[1][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[14]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[1][1]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[1][1]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U75/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U7/Y (INVX2M)                        0.58       1.49 r
+  register_file_inst/register1[1] (register_file)         0.00       1.49 r
+  alu_inst/B[1] (alu)                                     0.00       1.49 r
+  alu_inst/U75/Y (BUFX8M)                                 0.83       2.32 r
+  alu_inst/U19/Y (INVX12M)                                0.71       3.03 f
+  alu_inst/U388/Y (NOR2X4M)                               0.74       3.77 r
+  alu_inst/U389/Y (INVX2M)                                0.59       4.36 f
+  alu_inst/U280/Y (NOR3X8M)                               0.86       5.22 r
+  alu_inst/U390/Y (AOI2B1X1M)                             0.46       5.68 f
+  alu_inst/U275/S (ADDFX2M)                               0.71       6.39 f
+  alu_inst/U67/Y (CLKINVX1M)                              0.40       6.79 r
+  alu_inst/intadd_7/U2/CO (ADDFX1M)                       1.12       7.91 r
+  alu_inst/U392/Y (INVX2M)                                0.55       8.46 f
+  alu_inst/U453/Y (AOI222X2M)                             1.01       9.47 r
+  alu_inst/intadd_6/U2/CO (ADDFX1M)                       0.81      10.28 r
+  alu_inst/U428/Y (BUFX2M)                                0.67      10.95 r
+  alu_inst/U96/Y (INVX2M)                                 0.44      11.39 f
+  alu_inst/U452/Y (OAI21X2M)                              0.57      11.96 r
+  alu_inst/intadd_1/U3/CO (ADDFX2M)                       0.73      12.69 r
+  alu_inst/intadd_1/U2/CO (ADDFX2M)                       0.81      13.50 r
+  alu_inst/U94/Y (INVX2M)                                 0.44      13.94 f
+  alu_inst/U448/Y (OAI21X2M)                              0.57      14.51 r
+  alu_inst/intadd_0/U2/CO (ADDFX2M)                       1.07      15.58 r
+  alu_inst/U91/Y (INVX2M)                                 0.44      16.02 f
+  alu_inst/U443/Y (OAI21X2M)                              0.57      16.59 r
+  alu_inst/intadd_2/U2/CO (ADDFX2M)                       1.06      17.65 r
+  alu_inst/U439/Y (NOR2X2M)                               0.43      18.08 f
+  alu_inst/U440/Y (AOI22X1M)                              0.75      18.84 r
+  alu_inst/U441/Y (OAI21X2M)                              0.40      19.24 f
+  alu_inst/U84/Y (OAI2BB1X2M)                             0.39      19.63 f
+  alu_inst/alu_result_reg[14]/D (DFFRQX1M)                0.00      19.63 f
+  data arrival time                                                 19.63
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[14]/CK (DFFRQX1M)               0.00      24.80 r
+  library setup time                                     -0.18      24.62
+  data required time                                                24.62
+  --------------------------------------------------------------------------
+  data required time                                                24.62
+  data arrival time                                                -19.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        4.99
+
+
+  Startpoint: register_file_inst/memory_reg[0][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[2]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[0][7]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[0][7]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U77/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U172/Y (INVX2M)                      0.57       1.48 r
+  register_file_inst/register0[7] (register_file)         0.00       1.48 r
+  alu_inst/A[7] (alu)                                     0.00       1.48 r
+  alu_inst/U21/Y (BUFX4M)                                 0.92       2.40 r
+  alu_inst/U74/Y (INVX8M)                                 0.72       3.12 f
+  alu_inst/U309/Y (AOI211X4M)                             0.98       4.09 r
+  alu_inst/U201/Y (NOR2BX4M)                              0.34       4.44 f
+  alu_inst/U71/Y (OAI2BB1X2M)                             0.42       4.86 f
+  alu_inst/U106/Y (AND3X4M)                               0.38       5.23 f
+  alu_inst/U68/Y (MX2X4M)                                 0.44       5.68 f
+  alu_inst/U141/Y (AOI222X2M)                             1.00       6.68 r
+  alu_inst/U313/Y (OAI2BB2X4M)                            0.28       6.95 f
+  alu_inst/U66/Y (AND2X6M)                                0.37       7.32 f
+  alu_inst/U18/Y (CLKMX2X4M)                              0.51       7.84 r
+  alu_inst/U65/Y (OAI21X2M)                               0.32       8.16 f
+  alu_inst/U315/Y (OAI2BB1X4M)                            0.47       8.63 r
+  alu_inst/U202/Y (AOI222X4M)                             0.28       8.91 f
+  alu_inst/U93/Y (OAI2BB2X4M)                             0.42       9.33 r
+  alu_inst/U243/Y (NOR2BX8M)                              0.67      10.00 r
+  alu_inst/U92/Y (MX2X6M)                                 0.52      10.51 r
+  alu_inst/U64/Y (NAND2X2M)                               0.27      10.78 f
+  alu_inst/U259/Y (AND2X2M)                               0.36      11.14 f
+  alu_inst/U260/Y (AND2X2M)                               0.47      11.62 f
+  alu_inst/U286/Y (OAI21X4M)                              0.60      12.21 r
+  alu_inst/U131/Y (OAI2B2X4M)                             0.28      12.50 f
+  alu_inst/U319/Y (OAI2BB2X4M)                            0.38      12.87 r
+  alu_inst/U130/Y (AND4X6M)                               0.61      13.48 r
+  alu_inst/U205/Y (MX2X2M)                                0.55      14.04 r
+  alu_inst/U128/CO (ADDFX2M)                              0.72      14.76 r
+  alu_inst/U127/CO (ADDFX2M)                              0.47      15.22 r
+  alu_inst/U126/CO (ADDFX2M)                              0.47      15.69 r
+  alu_inst/U326/CO (ADDFX2M)                              0.47      16.16 r
+  alu_inst/U14/CO (ADDFX1M)                               0.55      16.71 r
+  alu_inst/U61/Y (AND3X6M)                                0.63      17.34 r
+  alu_inst/U412/Y (AOI22X1M)                              0.50      17.84 f
+  alu_inst/U252/Y (AND4XLM)                               0.62      18.47 f
+  alu_inst/U251/Y (OAI2BB2X1M)                            0.72      19.19 r
+  alu_inst/alu_result_reg[2]/D (DFFRQX1M)                 0.00      19.19 r
+  data arrival time                                                 19.19
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[2]/CK (DFFRQX1M)                0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -19.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                        5.19
+
+
+  Startpoint: register_file_inst/memory_reg[1][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[15]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[1][1]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[1][1]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U75/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U7/Y (INVX2M)                        0.58       1.49 r
+  register_file_inst/register1[1] (register_file)         0.00       1.49 r
+  alu_inst/B[1] (alu)                                     0.00       1.49 r
+  alu_inst/U75/Y (BUFX8M)                                 0.83       2.32 r
+  alu_inst/U19/Y (INVX12M)                                0.71       3.03 f
+  alu_inst/U388/Y (NOR2X4M)                               0.74       3.77 r
+  alu_inst/U389/Y (INVX2M)                                0.59       4.36 f
+  alu_inst/U280/Y (NOR3X8M)                               0.86       5.22 r
+  alu_inst/U390/Y (AOI2B1X1M)                             0.46       5.68 f
+  alu_inst/U275/S (ADDFX2M)                               0.71       6.39 f
+  alu_inst/U67/Y (CLKINVX1M)                              0.40       6.79 r
+  alu_inst/intadd_7/U2/CO (ADDFX1M)                       1.12       7.91 r
+  alu_inst/U392/Y (INVX2M)                                0.55       8.46 f
+  alu_inst/U453/Y (AOI222X2M)                             1.01       9.47 r
+  alu_inst/intadd_6/U2/CO (ADDFX1M)                       0.81      10.28 r
+  alu_inst/U428/Y (BUFX2M)                                0.67      10.95 r
+  alu_inst/U96/Y (INVX2M)                                 0.44      11.39 f
+  alu_inst/U452/Y (OAI21X2M)                              0.57      11.96 r
+  alu_inst/intadd_1/U3/CO (ADDFX2M)                       0.73      12.69 r
+  alu_inst/intadd_1/U2/CO (ADDFX2M)                       0.81      13.50 r
+  alu_inst/U94/Y (INVX2M)                                 0.44      13.94 f
+  alu_inst/U448/Y (OAI21X2M)                              0.57      14.51 r
+  alu_inst/intadd_0/U2/CO (ADDFX2M)                       1.07      15.58 r
+  alu_inst/U91/Y (INVX2M)                                 0.44      16.02 f
+  alu_inst/U443/Y (OAI21X2M)                              0.57      16.59 r
+  alu_inst/intadd_2/U2/CO (ADDFX2M)                       1.06      17.65 r
+  alu_inst/U437/Y (OAI211X2M)                             0.44      18.09 f
+  alu_inst/U438/Y (OAI2B11X2M)                            0.36      18.45 r
+  alu_inst/alu_result_reg[15]/D (DFFRQX1M)                0.00      18.45 r
+  data arrival time                                                 18.45
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[15]/CK (DFFRQX1M)               0.00      24.80 r
+  library setup time                                     -0.39      24.41
+  data required time                                                24.41
+  --------------------------------------------------------------------------
+  data required time                                                24.41
+  data arrival time                                                -18.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        5.96
+
+
+  Startpoint: register_file_inst/memory_reg[1][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[12]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[1][1]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[1][1]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U75/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U7/Y (INVX2M)                        0.58       1.49 r
+  register_file_inst/register1[1] (register_file)         0.00       1.49 r
+  alu_inst/B[1] (alu)                                     0.00       1.49 r
+  alu_inst/U75/Y (BUFX8M)                                 0.83       2.32 r
+  alu_inst/U19/Y (INVX12M)                                0.71       3.03 f
+  alu_inst/U388/Y (NOR2X4M)                               0.74       3.77 r
+  alu_inst/U389/Y (INVX2M)                                0.59       4.36 f
+  alu_inst/U280/Y (NOR3X8M)                               0.86       5.22 r
+  alu_inst/U390/Y (AOI2B1X1M)                             0.46       5.68 f
+  alu_inst/U275/S (ADDFX2M)                               0.71       6.39 f
+  alu_inst/U67/Y (CLKINVX1M)                              0.40       6.79 r
+  alu_inst/intadd_7/U2/CO (ADDFX1M)                       1.12       7.91 r
+  alu_inst/U392/Y (INVX2M)                                0.55       8.46 f
+  alu_inst/U453/Y (AOI222X2M)                             1.01       9.47 r
+  alu_inst/intadd_6/U2/CO (ADDFX1M)                       0.81      10.28 r
+  alu_inst/U428/Y (BUFX2M)                                0.67      10.95 r
+  alu_inst/U96/Y (INVX2M)                                 0.44      11.39 f
+  alu_inst/U452/Y (OAI21X2M)                              0.57      11.96 r
+  alu_inst/intadd_1/U3/CO (ADDFX2M)                       0.73      12.69 r
+  alu_inst/intadd_1/U2/CO (ADDFX2M)                       0.81      13.50 r
+  alu_inst/U94/Y (INVX2M)                                 0.44      13.94 f
+  alu_inst/U448/Y (OAI21X2M)                              0.57      14.51 r
+  alu_inst/intadd_0/U2/CO (ADDFX2M)                       1.07      15.58 r
+  alu_inst/U91/Y (INVX2M)                                 0.44      16.02 f
+  alu_inst/U431/Y (AOI22X2M)                              0.95      16.96 r
+  alu_inst/U432/Y (AOI2BB2X2M)                            0.62      17.59 r
+  alu_inst/U87/Y (OAI2BB1X2M)                             0.37      17.96 r
+  alu_inst/alu_result_reg[12]/D (DFFRQX1M)                0.00      17.96 r
+  data arrival time                                                 17.96
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[12]/CK (DFFRQX1M)               0.00      24.80 r
+  library setup time                                     -0.35      24.45
+  data required time                                                24.45
+  --------------------------------------------------------------------------
+  data required time                                                24.45
+  data arrival time                                                -17.96
+  --------------------------------------------------------------------------
+  slack (MET)                                                        6.49
+
+
+  Startpoint: register_file_inst/memory_reg[1][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[13]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[1][1]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[1][1]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U75/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U7/Y (INVX2M)                        0.58       1.49 r
+  register_file_inst/register1[1] (register_file)         0.00       1.49 r
+  alu_inst/B[1] (alu)                                     0.00       1.49 r
+  alu_inst/U75/Y (BUFX8M)                                 0.83       2.32 r
+  alu_inst/U19/Y (INVX12M)                                0.71       3.03 f
+  alu_inst/U388/Y (NOR2X4M)                               0.74       3.77 r
+  alu_inst/U389/Y (INVX2M)                                0.59       4.36 f
+  alu_inst/U280/Y (NOR3X8M)                               0.86       5.22 r
+  alu_inst/U390/Y (AOI2B1X1M)                             0.46       5.68 f
+  alu_inst/U275/S (ADDFX2M)                               0.71       6.39 f
+  alu_inst/U67/Y (CLKINVX1M)                              0.40       6.79 r
+  alu_inst/intadd_7/U2/CO (ADDFX1M)                       1.12       7.91 r
+  alu_inst/U392/Y (INVX2M)                                0.55       8.46 f
+  alu_inst/U453/Y (AOI222X2M)                             1.01       9.47 r
+  alu_inst/intadd_6/U2/CO (ADDFX1M)                       0.81      10.28 r
+  alu_inst/U428/Y (BUFX2M)                                0.67      10.95 r
+  alu_inst/U96/Y (INVX2M)                                 0.44      11.39 f
+  alu_inst/U452/Y (OAI21X2M)                              0.57      11.96 r
+  alu_inst/intadd_1/U3/CO (ADDFX2M)                       0.73      12.69 r
+  alu_inst/intadd_1/U2/CO (ADDFX2M)                       0.81      13.50 r
+  alu_inst/U94/Y (INVX2M)                                 0.44      13.94 f
+  alu_inst/U448/Y (OAI21X2M)                              0.57      14.51 r
+  alu_inst/intadd_0/U2/CO (ADDFX2M)                       1.07      15.58 r
+  alu_inst/U91/Y (INVX2M)                                 0.44      16.02 f
+  alu_inst/U443/Y (OAI21X2M)                              0.57      16.59 r
+  alu_inst/intadd_2/U2/S (ADDFX2M)                        0.73      17.32 f
+  alu_inst/U86/Y (OAI2BB1X2M)                             0.35      17.67 f
+  alu_inst/alu_result_reg[13]/D (DFFRQX1M)                0.00      17.67 f
+  data arrival time                                                 17.67
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[13]/CK (DFFRQX1M)               0.00      24.80 r
+  library setup time                                     -0.18      24.62
+  data required time                                                24.62
+  --------------------------------------------------------------------------
+  data required time                                                24.62
+  data arrival time                                                -17.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                        6.95
+
+
+  Startpoint: register_file_inst/memory_reg[1][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[10]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[1][1]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[1][1]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U75/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U7/Y (INVX2M)                        0.58       1.49 r
+  register_file_inst/register1[1] (register_file)         0.00       1.49 r
+  alu_inst/B[1] (alu)                                     0.00       1.49 r
+  alu_inst/U75/Y (BUFX8M)                                 0.83       2.32 r
+  alu_inst/U19/Y (INVX12M)                                0.71       3.03 f
+  alu_inst/U388/Y (NOR2X4M)                               0.74       3.77 r
+  alu_inst/U389/Y (INVX2M)                                0.59       4.36 f
+  alu_inst/U280/Y (NOR3X8M)                               0.86       5.22 r
+  alu_inst/U390/Y (AOI2B1X1M)                             0.46       5.68 f
+  alu_inst/U275/S (ADDFX2M)                               0.71       6.39 f
+  alu_inst/U67/Y (CLKINVX1M)                              0.40       6.79 r
+  alu_inst/intadd_7/U2/CO (ADDFX1M)                       1.12       7.91 r
+  alu_inst/U392/Y (INVX2M)                                0.55       8.46 f
+  alu_inst/U453/Y (AOI222X2M)                             1.01       9.47 r
+  alu_inst/intadd_6/U2/CO (ADDFX1M)                       0.81      10.28 r
+  alu_inst/U428/Y (BUFX2M)                                0.67      10.95 r
+  alu_inst/U96/Y (INVX2M)                                 0.44      11.39 f
+  alu_inst/U452/Y (OAI21X2M)                              0.57      11.96 r
+  alu_inst/intadd_1/U3/CO (ADDFX2M)                       0.73      12.69 r
+  alu_inst/intadd_1/U2/CO (ADDFX2M)                       0.81      13.50 r
+  alu_inst/U94/Y (INVX2M)                                 0.44      13.94 f
+  alu_inst/U430/Y (AOI22X2M)                              0.93      14.87 r
+  alu_inst/U134/Y (AOI2BB2X1M)                            0.75      15.62 r
+  alu_inst/U63/Y (OAI2BB1X1M)                             0.46      16.08 r
+  alu_inst/alu_result_reg[10]/D (DFFRQX1M)                0.00      16.08 r
+  data arrival time                                                 16.08
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[10]/CK (DFFRQX1M)               0.00      24.80 r
+  library setup time                                     -0.36      24.44
+  data required time                                                24.44
+  --------------------------------------------------------------------------
+  data required time                                                24.44
+  data arrival time                                                -16.08
+  --------------------------------------------------------------------------
+  slack (MET)                                                        8.36
+
+
+  Startpoint: register_file_inst/memory_reg[1][1]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[11]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[1][1]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[1][1]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U75/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U7/Y (INVX2M)                        0.58       1.49 r
+  register_file_inst/register1[1] (register_file)         0.00       1.49 r
+  alu_inst/B[1] (alu)                                     0.00       1.49 r
+  alu_inst/U75/Y (BUFX8M)                                 0.83       2.32 r
+  alu_inst/U19/Y (INVX12M)                                0.71       3.03 f
+  alu_inst/U388/Y (NOR2X4M)                               0.74       3.77 r
+  alu_inst/U389/Y (INVX2M)                                0.59       4.36 f
+  alu_inst/U280/Y (NOR3X8M)                               0.86       5.22 r
+  alu_inst/U390/Y (AOI2B1X1M)                             0.46       5.68 f
+  alu_inst/U275/S (ADDFX2M)                               0.71       6.39 f
+  alu_inst/U67/Y (CLKINVX1M)                              0.40       6.79 r
+  alu_inst/intadd_7/U2/CO (ADDFX1M)                       1.12       7.91 r
+  alu_inst/U392/Y (INVX2M)                                0.55       8.46 f
+  alu_inst/U453/Y (AOI222X2M)                             1.01       9.47 r
+  alu_inst/intadd_6/U2/CO (ADDFX1M)                       0.81      10.28 r
+  alu_inst/U428/Y (BUFX2M)                                0.67      10.95 r
+  alu_inst/U96/Y (INVX2M)                                 0.44      11.39 f
+  alu_inst/U452/Y (OAI21X2M)                              0.57      11.96 r
+  alu_inst/intadd_1/U3/CO (ADDFX2M)                       0.73      12.69 r
+  alu_inst/intadd_1/U2/CO (ADDFX2M)                       0.81      13.50 r
+  alu_inst/U94/Y (INVX2M)                                 0.44      13.94 f
+  alu_inst/U448/Y (OAI21X2M)                              0.57      14.51 r
+  alu_inst/intadd_0/U2/S (ADDFX2M)                        0.73      15.24 f
+  alu_inst/U62/Y (OAI2BB1X1M)                             0.50      15.74 f
+  alu_inst/alu_result_reg[11]/D (DFFRQX1M)                0.00      15.74 f
+  data arrival time                                                 15.74
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[11]/CK (DFFRQX1M)               0.00      24.80 r
+  library setup time                                     -0.21      24.59
+  data required time                                                24.59
+  --------------------------------------------------------------------------
+  data required time                                                24.59
+  data arrival time                                                -15.74
+  --------------------------------------------------------------------------
+  slack (MET)                                                        8.85
+
+
+  Startpoint: register_file_inst/memory_reg[0][7]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: alu_inst/alu_result_reg[3]
+            (rising edge-triggered flip-flop clocked by ALU_CLK)
+  Path Group: ALU_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  register_file_inst/memory_reg[0][7]/CK (DFFRQX1M)       0.00       0.00 r
+  register_file_inst/memory_reg[0][7]/Q (DFFRQX1M)        0.68       0.68 r
+  register_file_inst/U77/Y (INVX2M)                       0.23       0.91 f
+  register_file_inst/U172/Y (INVX2M)                      0.57       1.48 r
+  register_file_inst/register0[7] (register_file)         0.00       1.48 r
+  alu_inst/A[7] (alu)                                     0.00       1.48 r
+  alu_inst/U21/Y (BUFX4M)                                 0.92       2.40 r
+  alu_inst/U74/Y (INVX8M)                                 0.72       3.12 f
+  alu_inst/U309/Y (AOI211X4M)                             0.98       4.09 r
+  alu_inst/U201/Y (NOR2BX4M)                              0.34       4.44 f
+  alu_inst/U71/Y (OAI2BB1X2M)                             0.42       4.86 f
+  alu_inst/U106/Y (AND3X4M)                               0.38       5.23 f
+  alu_inst/U68/Y (MX2X4M)                                 0.44       5.68 f
+  alu_inst/U141/Y (AOI222X2M)                             1.00       6.68 r
+  alu_inst/U313/Y (OAI2BB2X4M)                            0.28       6.95 f
+  alu_inst/U66/Y (AND2X6M)                                0.37       7.32 f
+  alu_inst/U18/Y (CLKMX2X4M)                              0.51       7.84 r
+  alu_inst/U65/Y (OAI21X2M)                               0.32       8.16 f
+  alu_inst/U315/Y (OAI2BB1X4M)                            0.47       8.63 r
+  alu_inst/U202/Y (AOI222X4M)                             0.28       8.91 f
+  alu_inst/U93/Y (OAI2BB2X4M)                             0.42       9.33 r
+  alu_inst/U243/Y (NOR2BX8M)                              0.67      10.00 r
+  alu_inst/U92/Y (MX2X6M)                                 0.52      10.51 r
+  alu_inst/U64/Y (NAND2X2M)                               0.27      10.78 f
+  alu_inst/U259/Y (AND2X2M)                               0.36      11.14 f
+  alu_inst/U260/Y (AND2X2M)                               0.47      11.62 f
+  alu_inst/U286/Y (OAI21X4M)                              0.60      12.21 r
+  alu_inst/U131/Y (OAI2B2X4M)                             0.28      12.50 f
+  alu_inst/U319/Y (OAI2BB2X4M)                            0.38      12.87 r
+  alu_inst/U130/Y (AND4X6M)                               0.61      13.48 r
+  alu_inst/U371/Y (AOI22X1M)                              0.48      13.96 f
+  alu_inst/U253/Y (AND4XLM)                               0.62      14.59 f
+  alu_inst/U377/Y (OAI2BB2X1M)                            0.72      15.31 r
+  alu_inst/alu_result_reg[3]/D (DFFRQX1M)                 0.00      15.31 r
+  data arrival time                                                 15.31
+
+  clock ALU_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  alu_inst/alu_result_reg[3]/CK (DFFRQX1M)                0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -15.31
+  --------------------------------------------------------------------------
+  slack (MET)                                                        9.07
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][7]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U97/Y (AOI2BB2X1M)                   0.76      11.12 r
+  register_file_inst/memory_reg[15][7]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][7]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][6]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U102/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[15][6]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][6]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][5]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U95/Y (AOI2BB2X1M)                   0.76      11.12 r
+  register_file_inst/memory_reg[15][5]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][5]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][4]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U105/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[15][4]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][4]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][3]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U106/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[15][3]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][3]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][2]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U100/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[15][2]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][2]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U98/Y (AOI2BB2X1M)                   0.76      11.12 r
+  register_file_inst/memory_reg[15][1]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][1]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[15][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U281/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U183/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U103/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[15][0]/D (DFFRQX1M)       0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[15][0]/CK (DFFRQX1M)      0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[7][1]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U280/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U181/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U122/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[7][1]/D (DFFRQX1M)        0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[7][1]/CK (DFFRQX1M)       0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: system_controller_inst/uart_receiver_controller_inst/counter_reg[0]
+              (rising edge-triggered flip-flop clocked by REF_CLK)
+  Endpoint: register_file_inst/memory_reg[7][0]
+            (rising edge-triggered flip-flop clocked by REF_CLK)
+  Path Group: REF_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock REF_CLK (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  system_controller_inst/uart_receiver_controller_inst/counter_reg[0]/Q (DFFRQX1M)
+                                                          0.69       0.69 f
+  system_controller_inst/uart_receiver_controller_inst/U16/Y (INVX2M)
+                                                          0.46       1.15 r
+  system_controller_inst/uart_receiver_controller_inst/U46/Y (NAND3BX4M)
+                                                          0.59       1.73 f
+  system_controller_inst/uart_receiver_controller_inst/U6/Y (NOR2X2M)
+                                                          0.91       2.64 r
+  system_controller_inst/uart_receiver_controller_inst/U15/Y (NAND2X2M)
+                                                          0.65       3.29 f
+  system_controller_inst/uart_receiver_controller_inst/U30/Y (NOR2X6M)
+                                                          0.85       4.14 r
+  system_controller_inst/uart_receiver_controller_inst/U14/Y (AOI22X1M)
+                                                          0.58       4.72 f
+  system_controller_inst/uart_receiver_controller_inst/U31/Y (OAI31X2M)
+                                                          0.40       5.12 r
+  system_controller_inst/uart_receiver_controller_inst/U17/Y (INVX2M)
+                                                          0.34       5.46 f
+  system_controller_inst/uart_receiver_controller_inst/U3/Y (INVX2M)
+                                                          0.81       6.26 r
+  system_controller_inst/uart_receiver_controller_inst/address[0] (uart_receiver_controller)
+                                                          0.00       6.26 r
+  system_controller_inst/register_file_address[0] (system_controller)
+                                                          0.00       6.26 r
+  register_file_inst/address[0] (register_file)           0.00       6.26 r
+  register_file_inst/U148/Y (INVX4M)                      0.55       6.81 f
+  register_file_inst/U279/Y (NOR3X2M)                     0.83       7.64 r
+  register_file_inst/U3/Y (BUFX10M)                       0.80       8.44 r
+  register_file_inst/U79/Y (INVX2M)                       0.47       8.91 f
+  register_file_inst/U280/Y (NOR2X2M)                     0.55       9.46 r
+  register_file_inst/U181/Y (BUFX8M)                      0.91      10.37 r
+  register_file_inst/U101/Y (AOI2BB2X1M)                  0.76      11.12 r
+  register_file_inst/memory_reg[7][0]/D (DFFRQX1M)        0.00      11.12 r
+  data arrival time                                                 11.12
+
+  clock REF_CLK (rise edge)                              25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  clock uncertainty                                      -0.20      24.80
+  register_file_inst/memory_reg[7][0]/CK (DFFRQX1M)       0.00      24.80 r
+  library setup time                                     -0.42      24.38
+  data required time                                                24.38
+  --------------------------------------------------------------------------
+  data required time                                                24.38
+  data arrival time                                                -11.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       13.26
+
+
+  Startpoint: ser_data_in
+              (input port clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[0]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   54.20      54.20 f
+  ser_data_in (in)                                        0.11      54.31 f
+  U3/Y (CLKBUFX4M)                                        0.64      54.95 f
+  uart_inst/receiver_ser_data (uart)                      0.00      54.95 f
+  uart_inst/uart_receiver_inst/ser_data_in (uart_receiver)
+                                                          0.00      54.95 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/ser_data_in (uart_receiver_fsm)
+                                                          0.00      54.95 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U10/Y (OAI2B2X4M)
+                                                          0.49      55.44 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U23/Y (AOI21X3M)
+                                                          0.93      56.36 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U91/Y (OAI22X1M)
+                                                          0.62      56.99 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U18/Y (AOI31X1M)
+                                                          0.77      57.76 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U92/Y (OAI2B11X1M)
+                                                          0.69      58.46 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[0]/D (DFFRQX2M)
+                                                          0.00      58.46 f
+  data arrival time                                                 58.46
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.27     270.53
+  data required time                                               270.53
+  --------------------------------------------------------------------------
+  data required time                                               270.53
+  data arrival time                                                -58.46
+  --------------------------------------------------------------------------
+  slack (MET)                                                      212.08
+
+
+  Startpoint: ser_data_in
+              (input port clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[1]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   54.20      54.20 f
+  ser_data_in (in)                                        0.11      54.31 f
+  U3/Y (CLKBUFX4M)                                        0.64      54.95 f
+  uart_inst/receiver_ser_data (uart)                      0.00      54.95 f
+  uart_inst/uart_receiver_inst/ser_data_in (uart_receiver)
+                                                          0.00      54.95 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/ser_data_in (uart_receiver_fsm)
+                                                          0.00      54.95 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U10/Y (OAI2B2X4M)
+                                                          0.49      55.44 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U23/Y (AOI21X3M)
+                                                          0.93      56.36 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U83/Y (AOI2BB2X1M)
+                                                          0.75      57.12 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U9/Y (OAI31X2M)
+                                                          0.41      57.53 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[1]/D (DFFRQX4M)
+                                                          0.00      57.53 f
+  data arrival time                                                 57.53
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[1]/CK (DFFRQX4M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.20     270.60
+  data required time                                               270.60
+  --------------------------------------------------------------------------
+  data required time                                               270.60
+  data arrival time                                                -57.53
+  --------------------------------------------------------------------------
+  slack (MET)                                                      213.07
+
+
+  Startpoint: ser_data_in
+              (input port clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[2]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   54.20      54.20 f
+  ser_data_in (in)                                        0.11      54.31 f
+  U3/Y (CLKBUFX4M)                                        0.64      54.95 f
+  uart_inst/receiver_ser_data (uart)                      0.00      54.95 f
+  uart_inst/uart_receiver_inst/ser_data_in (uart_receiver)
+                                                          0.00      54.95 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/ser_data_in (uart_receiver_fsm)
+                                                          0.00      54.95 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U10/Y (OAI2B2X4M)
+                                                          0.49      55.44 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U23/Y (AOI21X3M)
+                                                          0.93      56.36 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U90/Y (OAI211X1M)
+                                                          0.65      57.02 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[2]/D (DFFRQX2M)
+                                                          0.00      57.02 f
+  data arrival time                                                 57.02
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/current_state_reg[2]/CK (DFFRQX2M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.27     270.53
+  data required time                                               270.53
+  --------------------------------------------------------------------------
+  data required time                                               270.53
+  data arrival time                                                -57.02
+  --------------------------------------------------------------------------
+  slack (MET)                                                      213.52
+
+
+  Startpoint: ser_data_in
+              (input port clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[2]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   54.20      54.20 r
+  ser_data_in (in)                                        0.17      54.37 r
+  U3/Y (CLKBUFX4M)                                        0.60      54.97 r
+  uart_inst/receiver_ser_data (uart)                      0.00      54.97 r
+  uart_inst/uart_receiver_inst/ser_data_in (uart_receiver)
+                                                          0.00      54.97 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/ser_data_in (data_sampler)
+                                                          0.00      54.97 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/U49/Y (NAND2XLM)
+                                                          0.64      55.61 f
+  uart_inst/uart_receiver_inst/data_sampler_inst/U50/Y (OAI2B1X1M)
+                                                          0.55      56.16 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[2]/D (DFFRQX2M)
+                                                          0.00      56.16 r
+  data arrival time                                                 56.16
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[2]/CK (DFFRQX2M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.41     270.39
+  data required time                                               270.39
+  --------------------------------------------------------------------------
+  data required time                                               270.39
+  data arrival time                                                -56.16
+  --------------------------------------------------------------------------
+  slack (MET)                                                      214.24
+
+
+  Startpoint: uart_inst/uart_receiver_inst/start_bit_checker_inst/start_bit_error_reg
+              (rising edge-triggered flip-flop clocked by UART_CLK)
+  Endpoint: frame_error
+            (output port clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_receiver_inst/start_bit_checker_inst/start_bit_error_reg/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  uart_inst/uart_receiver_inst/start_bit_checker_inst/start_bit_error_reg/Q (DFFRQX1M)
+                                                          0.95       0.95 r
+  uart_inst/uart_receiver_inst/start_bit_checker_inst/start_bit_error (start_bit_checker)
+                                                          0.00       0.95 r
+  uart_inst/uart_receiver_inst/U2/Y (OR2X8M)              0.94       1.89 r
+  uart_inst/uart_receiver_inst/frame_error (uart_receiver)
+                                                          0.00       1.89 r
+  uart_inst/receiver_frame_error (uart)                   0.00       1.89 r
+  frame_error (out)                                       0.00       1.89 r
+  data arrival time                                                  1.89
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  output external delay                                 -54.20     216.60
+  data required time                                               216.60
+  --------------------------------------------------------------------------
+  data required time                                               216.60
+  data arrival time                                                 -1.89
+  --------------------------------------------------------------------------
+  slack (MET)                                                      214.71
+
+
+  Startpoint: ser_data_in
+              (input port clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[1]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   54.20      54.20 r
+  ser_data_in (in)                                        0.17      54.37 r
+  U3/Y (CLKBUFX4M)                                        0.60      54.97 r
+  uart_inst/receiver_ser_data (uart)                      0.00      54.97 r
+  uart_inst/uart_receiver_inst/ser_data_in (uart_receiver)
+                                                          0.00      54.97 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/ser_data_in (data_sampler)
+                                                          0.00      54.97 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/U43/Y (MX2XLM)
+                                                          0.70      55.67 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[1]/D (DFFRQX2M)
+                                                          0.00      55.67 r
+  data arrival time                                                 55.67
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[1]/CK (DFFRQX2M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.37     270.43
+  data required time                                               270.43
+  --------------------------------------------------------------------------
+  data required time                                               270.43
+  data arrival time                                                -55.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                      214.76
+
+
+  Startpoint: ser_data_in
+              (input port clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[0]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   54.20      54.20 r
+  ser_data_in (in)                                        0.17      54.37 r
+  U3/Y (CLKBUFX4M)                                        0.60      54.97 r
+  uart_inst/receiver_ser_data (uart)                      0.00      54.97 r
+  uart_inst/uart_receiver_inst/ser_data_in (uart_receiver)
+                                                          0.00      54.97 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/ser_data_in (data_sampler)
+                                                          0.00      54.97 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/U33/Y (MX2XLM)
+                                                          0.68      55.65 r
+  uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[0]/D (DFFRQX2M)
+                                                          0.00      55.65 r
+  data arrival time                                                 55.65
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/data_sampler_inst/samples_reg[0]/CK (DFFRQX2M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.37     270.43
+  data required time                                               270.43
+  --------------------------------------------------------------------------
+  data required time                                               270.43
+  data arrival time                                                -55.65
+  --------------------------------------------------------------------------
+  slack (MET)                                                      214.77
+
+
+  Startpoint: uart_inst/uart_receiver_inst/parity_bit_checker_inst/par_bit_error_reg
+              (rising edge-triggered flip-flop clocked by UART_CLK)
+  Endpoint: par_error (output port clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_receiver_inst/parity_bit_checker_inst/par_bit_error_reg/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  uart_inst/uart_receiver_inst/parity_bit_checker_inst/par_bit_error_reg/Q (DFFRQX1M)
+                                                          0.70       0.70 r
+  uart_inst/uart_receiver_inst/parity_bit_checker_inst/U3/Y (BUFX10M)
+                                                          0.77       1.47 r
+  uart_inst/uart_receiver_inst/parity_bit_checker_inst/par_bit_error (parity_bit_checker)
+                                                          0.00       1.47 r
+  uart_inst/uart_receiver_inst/par_error (uart_receiver)
+                                                          0.00       1.47 r
+  uart_inst/receiver_par_error (uart)                     0.00       1.47 r
+  par_error (out)                                         0.00       1.47 r
+  data arrival time                                                  1.47
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  output external delay                                 -54.20     216.60
+  data required time                                               216.60
+  --------------------------------------------------------------------------
+  data required time                                               216.60
+  data arrival time                                                 -1.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      215.13
+
+
+  Startpoint: clock_divider_inst/counter_reg[2]
+              (rising edge-triggered flip-flop clocked by UART_CLK)
+  Endpoint: clock_divider_inst/counter_reg[2]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock_divider_inst/counter_reg[2]/CK (DFFRQX2M)         0.00       0.00 r
+  clock_divider_inst/counter_reg[2]/Q (DFFRQX2M)          0.89       0.89 r
+  clock_divider_inst/U30/Y (CLKINVX2M)                    0.84       1.72 f
+  clock_divider_inst/U31/Y (OAI2BB2X2M)                   0.71       2.43 f
+  clock_divider_inst/U33/Y (CLKINVX1M)                    0.81       3.25 r
+  clock_divider_inst/U34/Y (OAI22X1M)                     0.60       3.85 f
+  clock_divider_inst/U3/Y (AOI221X2M)                     0.88       4.73 r
+  clock_divider_inst/U40/Y (NAND4BX2M)                    0.85       5.58 f
+  clock_divider_inst/U12/Y (AOI221X4M)                    1.00       6.59 r
+  clock_divider_inst/U11/Y (AOI2B1X4M)                    0.41       6.99 f
+  clock_divider_inst/U43/Y (NAND2X2M)                     0.88       7.87 r
+  clock_divider_inst/U44/Y (CLKINVX2M)                    0.94       8.81 f
+  clock_divider_inst/U54/Y (NAND2X1M)                     0.82       9.63 r
+  clock_divider_inst/U55/Y (NAND2X1M)                     0.77      10.40 f
+  clock_divider_inst/U58/Y (OAI21X1M)                     0.85      11.24 r
+  clock_divider_inst/U16/Y (OAI31X2M)                     0.42      11.66 f
+  clock_divider_inst/counter_reg[2]/D (DFFRQX2M)          0.00      11.66 f
+  data arrival time                                                 11.66
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  clock_divider_inst/counter_reg[2]/CK (DFFRQX2M)         0.00     270.80 r
+  library setup time                                     -0.21     270.59
+  data required time                                               270.59
+  --------------------------------------------------------------------------
+  data required time                                               270.59
+  data arrival time                                                -11.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                      258.93
+
+
+  Startpoint: uart_inst/uart_receiver_inst/edge_counter_inst/edge_count_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_CLK)
+  Endpoint: uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/data_receiption_state_reg[3]
+            (rising edge-triggered flip-flop clocked by UART_CLK)
+  Path Group: UART_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_CLK (rise edge)                              0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_receiver_inst/edge_counter_inst/edge_count_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  uart_inst/uart_receiver_inst/edge_counter_inst/edge_count_reg[0]/Q (DFFRQX1M)
+                                                          0.68       0.68 f
+  uart_inst/uart_receiver_inst/edge_counter_inst/U10/Y (CLKINVX1M)
+                                                          0.42       1.10 r
+  uart_inst/uart_receiver_inst/edge_counter_inst/U11/Y (CLKINVX4M)
+                                                          0.95       2.06 f
+  uart_inst/uart_receiver_inst/edge_counter_inst/edge_count[0] (edge_counter)
+                                                          0.00       2.06 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/edge_count[0] (uart_receiver_fsm)
+                                                          0.00       2.06 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U45/Y (CLKINVX1M)
+                                                          1.01       3.07 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U35/Y (OAI22X1M)
+                                                          0.61       3.68 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U5/Y (AOI221X2M)
+                                                          0.87       4.55 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U48/Y (OAI211X1M)
+                                                          0.74       5.29 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U53/Y (AOI211X2M)
+                                                          0.95       6.25 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U32/Y (OAI21X4M)
+                                                          0.55       6.79 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U31/Y (CLKINVX4M)
+                                                          0.60       7.40 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U25/Y (CLKNAND2X2M)
+                                                          1.00       8.40 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U54/Y (CLKINVX1M)
+                                                          1.04       9.44 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U55/Y (NAND2X1M)
+                                                          0.87      10.31 f
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/U34/Y (OAI32X2M)
+                                                          0.94      11.25 r
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/data_receiption_state_reg[3]/D (DFFRQX4M)
+                                                          0.00      11.25 r
+  data arrival time                                                 11.25
+
+  clock UART_CLK (rise edge)                            271.00     271.00
+  clock network delay (ideal)                             0.00     271.00
+  clock uncertainty                                      -0.20     270.80
+  uart_inst/uart_receiver_inst/uart_receiver_fsm_inst/data_receiption_state_reg[3]/CK (DFFRQX4M)
+                                                          0.00     270.80 r
+  library setup time                                     -0.44     270.36
+  data required time                                               270.36
+  --------------------------------------------------------------------------
+  data required time                                               270.36
+  data arrival time                                                -11.25
+  --------------------------------------------------------------------------
+  slack (MET)                                                      259.11
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: ser_data_out
+            (output port clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U9/Y (OAI21X4M)
+                                                          0.62       3.68 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/bit_sel[0] (uart_transmitter_fsm)
+                                                          0.00       3.68 f
+  uart_inst/uart_transmitter_inst/output_mux_inst/bit_sel[0] (output_mux)
+                                                          0.00       3.68 f
+  uart_inst/uart_transmitter_inst/output_mux_inst/U7/Y (AOI21X1M)
+                                                          0.75       4.43 r
+  uart_inst/uart_transmitter_inst/output_mux_inst/U3/Y (AOI31X1M)
+                                                          0.41       4.84 f
+  uart_inst/uart_transmitter_inst/output_mux_inst/U4/Y (CLKINVX1M)
+                                                          0.65       5.49 r
+  uart_inst/uart_transmitter_inst/output_mux_inst/U5/Y (INVX8M)
+                                                          0.57       6.06 f
+  uart_inst/uart_transmitter_inst/output_mux_inst/mux_out (output_mux)
+                                                          0.00       6.06 f
+  uart_inst/uart_transmitter_inst/ser_data_out (uart_transmitter)
+                                                          0.00       6.06 f
+  uart_inst/transmitter_ser_data (uart)                   0.00       6.06 f
+  ser_data_out (out)                                      0.00       6.06 f
+  data arrival time                                                  6.06
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  output external delay                                 -54.20    2113.60
+  data required time                                              2113.60
+  --------------------------------------------------------------------------
+  data required time                                              2113.60
+  data arrival time                                                 -6.06
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2107.54
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[3]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U9/Y (OAI21X4M)
+                                                          0.62       3.68 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U18/Y (OR2X2M)
+                                                          0.58       4.26 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U23/Y (NOR4X1M)
+                                                          0.93       5.19 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[3]/D (DFFRQX2M)
+                                                          0.00       5.19 r
+  data arrival time                                                  5.19
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[3]/CK (DFFRQX2M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.45    2167.35
+  data required time                                              2167.35
+  --------------------------------------------------------------------------
+  data required time                                              2167.35
+  data arrival time                                                 -5.19
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.16
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[2]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U9/Y (OAI21X4M)
+                                                          0.62       3.68 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U18/Y (OR2X2M)
+                                                          0.58       4.26 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U3/Y (AOI221X2M)
+                                                          0.80       5.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[2]/D (DFFRQX4M)
+                                                          0.00       5.06 r
+  data arrival time                                                  5.06
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[2]/CK (DFFRQX4M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.42    2167.38
+  data required time                                              2167.38
+  --------------------------------------------------------------------------
+  data required time                                              2167.38
+  data arrival time                                                 -5.06
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.32
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[1]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U9/Y (OAI21X4M)
+                                                          0.62       3.68 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U18/Y (OR2X2M)
+                                                          0.58       4.26 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U4/Y (AOI221X2M)
+                                                          0.80       5.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[1]/D (DFFRQX2M)
+                                                          0.00       5.06 r
+  data arrival time                                                  5.06
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[1]/CK (DFFRQX2M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.42    2167.38
+  data required time                                              2167.38
+  --------------------------------------------------------------------------
+  data required time                                              2167.38
+  data arrival time                                                 -5.06
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.32
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/serializer_inst/ser_data_reg
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[0]/CK (DFFRQX4M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[0]/Q (DFFRQX4M)
+                                                          1.07       1.07 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/ser_data_index[0] (uart_transmitter_fsm)
+                                                          0.00       1.07 r
+  uart_inst/uart_transmitter_inst/serializer_inst/ser_data_index[0] (serializer)
+                                                          0.00       1.07 r
+  uart_inst/uart_transmitter_inst/serializer_inst/U10/Y (CLKINVX2M)
+                                                          1.10       2.16 f
+  uart_inst/uart_transmitter_inst/serializer_inst/U2/Y (AOI22X1M)
+                                                          0.91       3.07 r
+  uart_inst/uart_transmitter_inst/serializer_inst/U5/Y (AOI22X1M)
+                                                          0.59       3.66 f
+  uart_inst/uart_transmitter_inst/serializer_inst/U3/Y (AOI32X1M)
+                                                          0.81       4.47 r
+  uart_inst/uart_transmitter_inst/serializer_inst/U11/Y (OAI2B1X1M)
+                                                          0.57       5.04 f
+  uart_inst/uart_transmitter_inst/serializer_inst/ser_data_reg/D (DFFRQX1M)
+                                                          0.00       5.04 f
+  data arrival time                                                  5.04
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/serializer_inst/ser_data_reg/CK (DFFRQX1M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.21    2167.59
+  data required time                                              2167.59
+  --------------------------------------------------------------------------
+  data required time                                              2167.59
+  data arrival time                                                 -5.04
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.55
+
+
+  Startpoint: data_synchronizer_inst_1/synchronous_data_reg[5]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/parity_calculator_inst/par_bit_reg
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  data_synchronizer_inst_1/synchronous_data_reg[5]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  data_synchronizer_inst_1/synchronous_data_reg[5]/Q (DFFRQX2M)
+                                                          0.87       0.87 r
+  data_synchronizer_inst_1/synchronous_data[5] (data_synchronizer_0)
+                                                          0.00       0.87 r
+  uart_inst/transmitter_parallel_data[5] (uart)           0.00       0.87 r
+  uart_inst/uart_transmitter_inst/parallel_data[5] (uart_transmitter)
+                                                          0.00       0.87 r
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/parallel_data[5] (parity_calculator)
+                                                          0.00       0.87 r
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/U4/Y (XOR2X1M)
+                                                          0.66       1.53 r
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/U5/Y (XOR3XLM)
+                                                          0.63       2.16 f
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/U6/Y (XOR3X1M)
+                                                          0.83       3.00 r
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/U7/Y (NOR2X1M)
+                                                          0.41       3.41 f
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/U8/Y (AOI211X2M)
+                                                          0.78       4.19 r
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/U9/Y (AO21XLM)
+                                                          0.59       4.78 r
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/par_bit_reg/D (DFFRQX1M)
+                                                          0.00       4.78 r
+  data arrival time                                                  4.78
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/parity_calculator_inst/par_bit_reg/CK (DFFRQX1M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.40    2167.40
+  data required time                                              2167.40
+  --------------------------------------------------------------------------
+  data required time                                              2167.40
+  data arrival time                                                 -4.78
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.62
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[0]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U9/Y (OAI21X4M)
+                                                          0.62       3.68 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U8/Y (NOR3X1M)
+                                                          1.01       4.69 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[0]/D (DFFRQX4M)
+                                                          0.00       4.69 r
+  data arrival time                                                  4.69
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/serial_data_transmission_state_reg[0]/CK (DFFRQX4M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.46    2167.34
+  data required time                                              2167.34
+  --------------------------------------------------------------------------
+  data required time                                              2167.34
+  data arrival time                                                 -4.69
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.65
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[1]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U19/Y (AOI2BB1X2M)
+                                                          0.94       4.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U5/Y (AOI32X1M)
+                                                          0.75       4.75 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[1]/D (DFFRQX2M)
+                                                          0.00       4.75 f
+  data arrival time                                                  4.75
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[1]/CK (DFFRQX2M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.28    2167.52
+  data required time                                              2167.52
+  --------------------------------------------------------------------------
+  data required time                                              2167.52
+  data arrival time                                                 -4.75
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.77
+
+
+  Startpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00       0.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/Q (DFFRQX2M)
+                                                          0.90       0.90 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U11/Y (CLKINVX2M)
+                                                          1.04       1.95 f
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U12/Y (NAND2X2M)
+                                                          1.11       3.06 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U19/Y (AOI2BB1X2M)
+                                                          0.94       4.00 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/U22/Y (AOI21BXLM)
+                                                          0.59       4.59 r
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/D (DFFRQX2M)
+                                                          0.00       4.59 r
+  data arrival time                                                  4.59
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst/current_state_reg[0]/CK (DFFRQX2M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.38    2167.42
+  data required time                                              2167.42
+  --------------------------------------------------------------------------
+  data required time                                              2167.42
+  data arrival time                                                 -4.59
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2162.84
+
+
+  Startpoint: data_synchronizer_inst_1/U_bus_synchronizer/genblk1[1].reg_inst/Q_reg[0]
+              (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Endpoint: data_synchronizer_inst_1/synchronous_data_reg[0]
+            (rising edge-triggered flip-flop clocked by UART_TX_CLK)
+  Path Group: UART_TX_CLK
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  system_top         tsmc13_wl30           scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock UART_TX_CLK (rise edge)                           0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  data_synchronizer_inst_1/U_bus_synchronizer/genblk1[1].reg_inst/Q_reg[0]/CK (DFFRQX1M)
+                                                          0.00       0.00 r
+  data_synchronizer_inst_1/U_bus_synchronizer/genblk1[1].reg_inst/Q_reg[0]/Q (DFFRQX1M)
+                                                          0.90       0.90 r
+  data_synchronizer_inst_1/U_bus_synchronizer/genblk1[1].reg_inst/Q[0] (register_0)
+                                                          0.00       0.90 r
+  data_synchronizer_inst_1/U_bus_synchronizer/synchronous_data[0] (bus_synchronizer_0)
+                                                          0.00       0.90 r
+  data_synchronizer_inst_1/U5/Y (NOR2BX1M)                0.71       1.61 r
+  data_synchronizer_inst_1/U3/Y (BUFX5M)                  0.89       2.50 r
+  data_synchronizer_inst_1/U6/Y (CLKINVX4M)               1.13       3.62 f
+  data_synchronizer_inst_1/U14/Y (AO22XLM)                0.89       4.51 f
+  data_synchronizer_inst_1/synchronous_data_reg[0]/D (DFFRQX2M)
+                                                          0.00       4.51 f
+  data arrival time                                                  4.51
+
+  clock UART_TX_CLK (rise edge)                        2168.00    2168.00
+  clock network delay (ideal)                             0.00    2168.00
+  clock uncertainty                                      -0.20    2167.80
+  data_synchronizer_inst_1/synchronous_data_reg[0]/CK (DFFRQX2M)
+                                                          0.00    2167.80 r
+  library setup time                                     -0.22    2167.58
+  data required time                                              2167.58
+  --------------------------------------------------------------------------
+  data required time                                              2167.58
+  data arrival time                                                 -4.51
+  --------------------------------------------------------------------------
+  slack (MET)                                                     2163.07
+
+
+1

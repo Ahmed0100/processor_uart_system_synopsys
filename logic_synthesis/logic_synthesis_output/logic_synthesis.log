@@ -1,0 +1,632 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+# Formal verification setup file
+set_svf "../logic_synthesis_output/system_top.svf"
+1
+# Place the ICG cell
+cd "../../rtl/clock_gating_cell"
+exec tclsh place_ICG_cell.tcl -p
+cd "../../logic_synthesis/scripts"
+# Add the path of the std cells and the RTL files to the search path variable
+lappend search_path "../../lib/std_cells"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver ../../lib/std_cells
+lappend search_path "../../rtl/system_top" "../../rtl/uart/uart_transmitter"                     "../../rtl/uart/uart_receiver" "../../rtl/uart/uart"                     "../../rtl/ALU" "../../rtl/bus_synchronizer"                     "../../rtl/clock_divider" "../../rtl/clock_gating_cell"                     "../../rtl/data_synchronizer" "../../rtl/register_file"                     "../../rtl/reset_synchronizer" "../../rtl/system_controller"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver ../../lib/std_cells ../../rtl/system_top ../../rtl/uart/uart_transmitter ../../rtl/uart/uart_receiver ../../rtl/uart/uart ../../rtl/ALU ../../rtl/bus_synchronizer ../../rtl/clock_divider ../../rtl/clock_gating_cell ../../rtl/data_synchronizer ../../rtl/register_file ../../rtl/reset_synchronizer ../../rtl/system_controller
+# Standard cells' libraries
+set SSLIB "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+# Target library is the list of technology libraries of components to be used when compiling a design
+# It is used to map generic cells to technology cells
+set target_library [list $SSLIB]
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+# Link library is the list of design files and libraries used during linking
+set link_library [list * $SSLIB $FFLIB]
+* scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+# Read RTL design files
+set file_format verilog
+verilog
+# Translate the module into a technology independent representation (GTECH)
+read_file -format $file_format "system_top.v"
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'
+  Loading link library 'gtech'
+Loading verilog file '/home/ICer/playground/processor_uart_system/rtl/system_top/system_top.v'
+Detecting input file type automatically (-rtl or -netlist).
+Opening include file ../../rtl/system_controller/../uart/uart/uart.v
+Opening include file ../../rtl/uart/uart/../uart_receiver/uart_receiver.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/deserializer.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/data_sampler.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/edge_counter.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/start_bit_checker.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/stop_bit_checker.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/parity_bit_checker.v
+Opening include file ../../rtl/uart/uart/../uart_transmitter/uart_transmitter.v
+Opening include file ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v
+Opening include file ../../rtl/uart/uart_transmitter/serializer.v
+Opening include file ../../rtl/uart/uart_transmitter/parity_calculator.v
+Opening include file ../../rtl/uart/uart_transmitter/output_mux.v
+Opening include file ../../rtl/system_controller/../register_file/register_file.v
+Opening include file ../../rtl/system_controller/../clock_divider/clock_divider.v
+Opening include file ../../rtl/system_controller/../reset_synchronizer/reset_synchronizer.v
+Opening include file ../../rtl/system_controller/../data_synchronizer/data_synchronizer.v
+Opening include file ../../rtl/system_controller/../bus_synchronizer/bus_synchronizer.v
+Opening include file ../../rtl/system_controller/../alu/alu.v
+Opening include file ../../rtl/system_controller/../system_controller/system_controller.v
+Opening include file ../../rtl/system_controller/uart_receiver_controller.v
+Opening include file ../../rtl/system_controller/uart_transmitter_controller.v
+Opening include file ../../rtl/system_controller/../clock_gating_cell/clock_gating_cell.v
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/playground/processor_uart_system/rtl/system_top/system_top.v
+Opening include file ../../rtl/system_top/../uart/uart/uart.v
+Opening include file ../../rtl/uart/uart_transmitter/../uart_receiver/uart_receiver.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/deserializer.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/edge_counter.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/start_bit_checker.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/stop_bit_checker.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/parity_bit_checker.v
+Warning:  ../../rtl/uart/uart_transmitter/../uart_receiver/uart_receiver.v:44: the undeclared symbol 'edge_count_done' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../../rtl/uart/uart_transmitter/../uart_transmitter/uart_transmitter.v
+Opening include file ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v
+Opening include file ../../rtl/uart/uart_transmitter/serializer.v
+Opening include file ../../rtl/uart/uart_transmitter/parity_calculator.v
+Opening include file ../../rtl/uart/uart_transmitter/output_mux.v
+Opening include file ../../rtl/system_top/../register_file/register_file.v
+Opening include file ../../rtl/system_top/../clock_divider/clock_divider.v
+Opening include file ../../rtl/system_top/../reset_synchronizer/reset_synchronizer.v
+Opening include file ../../rtl/system_top/../data_synchronizer/data_synchronizer.v
+Opening include file ../../rtl/system_top/../bus_synchronizer/bus_synchronizer.v
+Warning:  ../../rtl/system_top/../bus_synchronizer/bus_synchronizer.v:41: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Opening include file ../../rtl/system_top/../alu/alu.v
+Opening include file ../../rtl/system_top/../system_controller/system_controller.v
+Opening include file ../../rtl/system_controller/uart_receiver_controller.v
+Opening include file ../../rtl/system_controller/uart_transmitter_controller.v
+Opening include file ../../rtl/system_top/../clock_gating_cell/clock_gating_cell.v
+
+Statistics for case statements in always block at line 56 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            58            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 117 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           118            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_receiver_fsm line 35 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| data_receiption_state_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine uart_receiver_fsm line 47 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine deserializer line 11 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/deserializer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  parallel_data_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 18 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            23            |     auto/no      |
+===============================================
+
+Statistics for case statements in always block at line 49 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            52            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine data_sampler line 18 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     samples_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  sample_enable_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 21 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/edge_counter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine edge_counter line 11 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/edge_counter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   edge_count_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine start_bit_checker line 9 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/start_bit_checker.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| start_bit_error_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine stop_bit_checker line 9 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/stop_bit_checker.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| stop_bit_error_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 12 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/parity_bit_checker.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            18            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine parity_bit_checker line 12 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/parity_bit_checker.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  par_bit_error_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Warning:  ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v:81: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 50 in file
+	'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            53            |     no/auto      |
+===============================================
+Warning:  ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v:120: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 86 in file
+	'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            90            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_fsm line 29 in file
+		'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+| serial_data_transmission_state_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+==============================================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_fsm line 43 in file
+		'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine serializer line 11 in file
+		'../../rtl/uart/uart_transmitter/serializer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ser_data_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  serializer/15   |   8    |    1    |      3       |
+======================================================
+
+Inferred memory devices in process
+	in routine parity_calculator line 30 in file
+		'../../rtl/uart/uart_transmitter/parity_calculator.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     par_bit_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 12 in file
+	'../../rtl/uart/uart_transmitter/output_mux.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            13            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine register_file line 22 in file
+		'../../rtl/system_top/../register_file/register_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| read_data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     memory_reg      | Flip-flop |  126  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     memory_reg      | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    read_data_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| register_file/46 |   16   |    8    |      4       |
+======================================================
+
+Inferred memory devices in process
+	in routine clock_divider line 22 in file
+		'../../rtl/system_top/../clock_divider/clock_divider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     counter_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   divided_clk_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   odd_toggle_reg    | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine reset_synchronizer line 10 in file
+		'../../rtl/system_top/../reset_synchronizer/reset_synchronizer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register line 12 in file
+		'../../rtl/system_top/../bus_synchronizer/bus_synchronizer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine data_synchronizer line 52 in file
+		'../../rtl/system_top/../data_synchronizer/data_synchronizer.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| Q_pulse_generator_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine data_synchronizer line 64 in file
+		'../../rtl/system_top/../data_synchronizer/data_synchronizer.v'.
+======================================================================================
+|       Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+======================================================================================
+| synchronous_data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+======================================================================================
+
+Inferred memory devices in process
+	in routine data_synchronizer line 74 in file
+		'../../rtl/system_top/../data_synchronizer/data_synchronizer.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| synchronous_data_reg | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine alu line 16 in file
+		'../../rtl/system_top/../alu/alu.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|    alu_result_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+| alu_result_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Statistics for case statements in always block at line 50 in file
+	'../../rtl/system_controller/uart_receiver_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            57            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 129 in file
+	'../../rtl/system_controller/uart_receiver_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           139            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_receiver_controller line 42 in file
+		'../../rtl/system_controller/uart_receiver_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_receiver_controller line 110 in file
+		'../../rtl/system_controller/uart_receiver_controller.v'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| Q_write_address_register_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+	in routine uart_receiver_controller line 117 in file
+		'../../rtl/system_controller/uart_receiver_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     counter_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 59 in file
+	'../../rtl/system_controller/uart_transmitter_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            61            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 111 in file
+	'../../rtl/system_controller/uart_transmitter_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           112            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 172 in file
+	'../../rtl/system_controller/uart_transmitter_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           174            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 38 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 46 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     message_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 156 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+===========================================================================================
+|          Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================================
+| uart_receiver_controller_en_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===========================================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 164 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+==========================================================================================
+|         Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==========================================================================================
+| transmission_current_state_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+==========================================================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/playground/processor_uart_system/rtl/system_top/uart_receiver_fsm.db:uart_receiver_fsm'
+Loaded 26 designs.
+Current design is 'uart_receiver_fsm'.
+uart_receiver_fsm deserializer data_sampler edge_counter start_bit_checker stop_bit_checker parity_bit_checker uart_receiver uart_transmitter_fsm serializer parity_calculator output_mux uart_transmitter uart register_file clock_divider reset_synchronizer register bus_synchronizer data_synchronizer alu uart_receiver_controller uart_transmitter_controller system_controller clock_gating_cell system_top
+# Set top module
+current_design system_top
+Current design is 'system_top'.
+{system_top}
+# Link the top module with its submodules
+link
+
+  Linking design 'system_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (26 designs)              /home/ICer/playground/processor_uart_system/rtl/system_top/system_top.db, etc
+  scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (library) /home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+  scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c (library) /home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+
+1
+# Check the design consistency
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Sat Apr 29 18:13:42 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                              17
+    Cells do not drive (LINT-1)                                    16
+    Connected to power or ground (LINT-32)                          1
+
+Nets                                                                9
+    Unloaded nets (LINT-2)                                          9
+--------------------------------------------------------------------------------
+
+Warning: In design 'alu', cell 'C348' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C349' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C350' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C351' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C376' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C378' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C380' does not drive any nets. (LINT-1)
+Warning: In design 'clock_divider', cell 'C118' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_fsm', cell 'C142' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'C316' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_19' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_20' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_21' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_22' does not drive any nets. (LINT-1)
+Warning: In design 'edge_counter', cell 'C102' does not drive any nets. (LINT-1)
+Warning: In design 'data_sampler', cell 'C132' does not drive any nets. (LINT-1)
+Warning: In design 'system_top', net 'receiver_q_pulse_generator' driven by pin 'data_synchronizer_inst_0/Q_pulse_generator' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_prescale_config[6]' driven by pin 'register_file_inst/register3[6]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_prescale_config[7]' driven by pin 'register_file_inst/register3[7]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[2]' driven by pin 'register_file_inst/register2[2]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[3]' driven by pin 'register_file_inst/register2[3]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[4]' driven by pin 'register_file_inst/register2[4]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[5]' driven by pin 'register_file_inst/register2[5]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[6]' driven by pin 'register_file_inst/register2[6]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[7]' driven by pin 'register_file_inst/register2[7]' has no loads. (LINT-2)
+Warning: In design 'system_top', a pin on submodule 'clock_divider_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clk_divider_en' is connected to logic 1. 
+1
+# Constraints
+source -echo ./constraints.tcl
+# ------------------------ Clock Domain '1' (REFERENCE_CLK) --------------------
+set ALU_CLK_NAME ALU_CLK
+set REF_CLK_NAME REF_CLK
+set REF_CLK_PER 25
+set REF_CLK_SETUP_SKEW 0.2
+set REF_CLK_HOLD_SKEW 0.1
+set REF_CLK_RISE 0.1
+set REF_CLK_FALL 0.1
+set REF_CLK_LATENCY 0
+create_clock -name $REF_CLK_NAME -period $REF_CLK_PER -waveform "0 [expr $REF_CLK_PER/2]" [get_ports ref_clk]
+set_clock_uncertainty -setup $REF_CLK_SETUP_SKEW [get_clocks $REF_CLK_NAME]
+set_clock_uncertainty -hold $REF_CLK_HOLD_SKEW [get_clocks $REF_CLK_NAME]
+set_clock_transition -rise $REF_CLK_RISE [get_clocks $REF_CLK_NAME]
+set_clock_transition -fall $REF_CLK_FALL [get_clocks $REF_CLK_NAME]
+set_clock_latency $REF_CLK_LATENCY [get_clocks $REF_CLK_NAME]
+create_generated_clock -master_clock $REF_CLK_NAME -source [get_ports ref_clk] -name $ALU_CLK_NAME -divide_by 1 [get_ports clock_gating_cell_inst/gated_clk]
+set_clock_uncertainty -setup $REF_CLK_SETUP_SKEW [get_clocks $ALU_CLK_NAME]
+set_clock_uncertainty -hold $REF_CLK_HOLD_SKEW [get_clocks $ALU_CLK_NAME]
+set_clock_transition -rise $REF_CLK_RISE [get_clocks $ALU_CLK_NAME]
+set_clock_transition -fall $REF_CLK_FALL [get_clocks $ALU_CLK_NAME]
+set_clock_latency $REF_CLK_LATENCY [get_clocks $ALU_CLK_NAME]
+# ------------------------ Clock Domain '2' (UART_CLK) --------------------
+set UART_TX_CLK_NAME UART_TX_CLK
+set UART_CLK_PRESCALE 8
+set UART_CLK_NAME UART_CLK
+set UART_CLK_PER 271
+set UART_CLK_SETUP_SKEW 0.2
+set UART_CLK_HOLD_SKEW 0.1
+set UART_CLK_RISE 0.1
+set UART_CLK_FALL 0.1
+set UART_CLK_LATENCY 0
+create_clock -name $UART_CLK_NAME -period $UART_CLK_PER -waveform "0 [expr $UART_CLK_PER/2]" [get_ports uart_clk]
+set_clock_uncertainty -setup $UART_CLK_SETUP_SKEW [get_clocks $UART_CLK_NAME]
+set_clock_uncertainty -hold $UART_CLK_HOLD_SKEW [get_clocks $UART_CLK_NAME]
+set_clock_transition -rise $UART_CLK_RISE [get_clocks $UART_CLK_NAME]
+set_clock_transition -fall $UART_CLK_FALL [get_clocks $UART_CLK_NAME]
+set_clock_latency $UART_CLK_LATENCY [get_clocks $UART_CLK_NAME]
+create_generated_clock -master_clock $UART_CLK_NAME -source [get_ports uart_clk] -name $UART_TX_CLK_NAME -divide_by $UART_CLK_PRESCALE [get_ports clock_divider_inst/output_clk]
+set_clock_uncertainty -setup $UART_CLK_SETUP_SKEW [get_clocks $UART_TX_CLK_NAME]
+set_clock_uncertainty -hold $UART_CLK_HOLD_SKEW [get_clocks $UART_TX_CLK_NAME]
+set_clock_transition -rise $UART_CLK_RISE [get_clocks $UART_TX_CLK_NAME]
+set_clock_transition -fall $UART_CLK_FALL [get_clocks $UART_TX_CLK_NAME]
+set_clock_latency $UART_CLK_LATENCY [get_clocks $UART_TX_CLK_NAME]
+set uart_clk_input_delay [expr 0.2 * $UART_CLK_PER]
+set_input_delay $uart_clk_input_delay -clock $UART_CLK_NAME [get_ports ser_data_in]
+set uart_tx_clk_output_delay [expr 0.2 * $UART_CLK_PER]
+set_output_delay $uart_tx_clk_output_delay -clock $UART_TX_CLK_NAME [get_ports ser_data_out]
+set uart_clk_output_delay [expr 0.2 * $UART_CLK_PER]
+set_output_delay $uart_clk_output_delay -clock $UART_CLK_NAME [get_port par_error]
+set_output_delay $uart_clk_output_delay -clock $UART_CLK_NAME [get_port frame_error]
+# define asynchronous groups
+set_clock_groups -asynchronous -group [get_clocks "$REF_CLK_NAME $ALU_CLK_NAME"] -group [get_clocks "$UART_CLK_NAME $UART_TX_CLK_NAME"]
+set_driving_cell -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c -lib_cell BUFX2M -pin Y [get_port ser_data_in]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+set_load 0.5 [get_ports ser_data_out]
+set_load 0.5 [get_ports par_error]
+set_load 0.5 [get_ports frame_error]
+set_dont_touch_network {ref_clk clock_gating_cell_inst/gated_clk uart_clk clock_divider_inst/output_clk}
+set_operating_conditions -min_library "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c" -min "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c" -max_library "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c" -max "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c"
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c' found in library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'.
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c' found in library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'.
+set_wire_load_model -name tsmc13_wl30 -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+set_max_area 0
+set_fix_multiple_port_nets -all -buffer_constants -feedthroughs1
+# Mapping, optimization, & STA with high effort
+compile_ultra -no_auto_ungroup
+Warning: The -no_auto_ungroup switch with compile_ultra  will be obsolete in the next major release. Please use -no_autoungroup instead. (OPT-1309)
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"

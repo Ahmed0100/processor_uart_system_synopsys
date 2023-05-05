@@ -1,0 +1,25 @@
+ 
+****************************************
+Report : port
+Design : system_top
+Version: O-2018.06-SP1
+Date   : Wed Apr 26 17:16:13 2023
+****************************************
+
+
+
+Attributes:
+    d - dont_touch_network
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+ref_clk        in      0.0000   0.0000   --      --      --         d
+reset_n        in      0.0000   0.0000   --      --      --         
+ser_data_in    in      0.0000   0.0000    1.50    0.18   --         
+uart_clk       in      0.0000   0.0000   --      --      --         d
+frame_error    out     0.5000   0.0000   --      --      --         
+par_error      out     0.5000   0.0000   --      --      --         
+ser_data_out   out     0.5000   0.0000   --      --      --         
+
+1

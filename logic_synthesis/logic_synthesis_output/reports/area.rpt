@@ -1,0 +1,103 @@
+ 
+****************************************
+Report : area
+Design : system_top
+Version: O-2018.06-SP1
+Date   : Wed Apr 26 17:16:13 2023
+****************************************
+
+Library(s) Used:
+
+    scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (File: /home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db)
+
+Number of ports:                          566
+Number of nets:                          2180
+Number of cells:                         1610
+Number of combinational cells:           1310
+Number of sequential cells:               263
+Number of macros/black boxes:               0
+Number of buf/inv:                        276
+Number of references:                      13
+
+Combinational area:              11073.923787
+Buf/Inv area:                     1446.164326
+Noncombinational area:            6848.393929
+Macro/Black Box area:                0.000000
+Net Interconnect area:          616983.083496
+
+Total cell area:                 17922.317715
+Total area:                     634905.401211
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------------------------
+system_top                        17922.3177    100.0     11.7670     0.0000  0.0000  system_top
+alu_inst                           5429.2938     30.3   4989.2080   440.0858  0.0000  alu
+bus_synchronizer_inst_0              56.4816      0.3      4.7068     0.0000  0.0000  bus_synchronizer_3
+bus_synchronizer_inst_0/genblk1[1].reg_inst
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_6
+bus_synchronizer_inst_0/reg_inst_0
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_7
+bus_synchronizer_inst_1              56.4816      0.3      4.7068     0.0000  0.0000  bus_synchronizer_2
+bus_synchronizer_inst_1/genblk1[1].reg_inst
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_4
+bus_synchronizer_inst_1/reg_inst_0
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_5
+clock_divider_inst                  581.2898      3.2    396.5479   184.7419  0.0000  clock_divider
+clock_gating_cell_inst               21.1806      0.1      0.0000    21.1806  0.0000  clock_gating_cell
+data_synchronizer_inst_0            462.4431      2.6    121.2001   284.7614  0.0000  data_synchronizer_1
+data_synchronizer_inst_0/U_bus_synchronizer
+                                     56.4816      0.3      4.7068     0.0000  0.0000  bus_synchronizer_1
+data_synchronizer_inst_0/U_bus_synchronizer/genblk1[1].reg_inst
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_2
+data_synchronizer_inst_0/U_bus_synchronizer/reg_inst_0
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_3
+data_synchronizer_inst_1            411.8450      2.3    101.1962   258.8740  0.0000  data_synchronizer_0
+data_synchronizer_inst_1/U_bus_synchronizer
+                                     51.7748      0.3      0.0000     0.0000  0.0000  bus_synchronizer_0
+data_synchronizer_inst_1/U_bus_synchronizer/genblk1[1].reg_inst
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_0
+data_synchronizer_inst_1/U_bus_synchronizer/reg_inst_0
+                                     25.8874      0.1      0.0000    25.8874  0.0000  register_1
+register_file_inst                 6121.1934     34.2   2516.9613  3604.2321  0.0000  register_file
+reset_synchronizer_inst_0            51.7748      0.3      0.0000    51.7748  0.0000  reset_synchronizer_1
+reset_synchronizer_inst_1            51.7748      0.3      0.0000    51.7748  0.0000  reset_synchronizer_0
+system_controller_inst             1793.2908     10.0     11.7670     0.0000  0.0000  system_controller
+system_controller_inst/uart_receiver_controller_inst
+                                    740.1443      4.1    503.6276   236.5167  0.0000  uart_receiver_controller
+system_controller_inst/uart_transmitter_controller_inst
+                                   1041.3795      5.8    468.3266   573.0529  0.0000  uart_transmitter_controller
+uart_inst                          2873.5014     16.0      4.7068     0.0000  0.0000  uart
+uart_inst/uart_receiver_inst       2323.9825     13.0     18.8272     0.0000  0.0000  uart_receiver
+uart_inst/uart_receiver_inst/data_sampler_inst
+                                    581.2898      3.2    477.7402   103.5496  0.0000  data_sampler
+uart_inst/uart_receiver_inst/deserializer_inst
+                                    361.2469      2.0    154.1477   207.0992  0.0000  deserializer
+uart_inst/uart_receiver_inst/edge_counter_inst
+                                    334.1828      1.9    183.5652   150.6176  0.0000  edge_counter
+uart_inst/uart_receiver_inst/parity_bit_checker_inst
+                                    141.2040      0.8    115.3166    25.8874  0.0000  parity_bit_checker
+uart_inst/uart_receiver_inst/start_bit_checker_inst
+                                     31.7709      0.2      5.8835    25.8874  0.0000  start_bit_checker
+uart_inst/uart_receiver_inst/stop_bit_checker_inst
+                                     31.7709      0.2      5.8835    25.8874  0.0000  stop_bit_checker
+uart_inst/uart_receiver_inst/uart_receiver_fsm_inst
+                                    823.6900      4.6    637.7714   185.9186  0.0000  uart_receiver_fsm
+uart_inst/uart_transmitter_inst     544.8121      3.0      0.0000     0.0000  0.0000  uart_transmitter
+uart_inst/uart_transmitter_inst/output_mux_inst
+                                     27.0641      0.2     27.0641     0.0000  0.0000  output_mux
+uart_inst/uart_transmitter_inst/parity_calculator_inst
+                                    129.4370      0.7    103.5496    25.8874  0.0000  parity_calculator
+uart_inst/uart_transmitter_inst/serializer_inst
+                                     95.3127      0.5     69.4253    25.8874  0.0000  serializer
+uart_inst/uart_transmitter_inst/uart_transmitter_fsm_inst
+                                    292.9983      1.6    135.3205   157.6778  0.0000  uart_transmitter_fsm
+--------------------------------  ----------  -------  ----------  ---------  ------  ---------------------------
+Total                                                  11073.9238  6848.3939  0.0000
+
+1
