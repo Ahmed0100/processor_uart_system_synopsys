@@ -1,0 +1,22 @@
+QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 17 2018
+Start time: 19:11:42 on Apr 24,2023
+vlog system_top_tb.v 
+-- Compiling module uart
+-- Compiling module register_file
+-- Compiling module clock_divider
+-- Compiling module reset_synchronizer
+-- Compiling module register
+-- Compiling module bus_synchronizer
+-- Compiling module data_synchronizer
+-- Compiling module alu
+-- Compiling module uart_receiver_controller
+-- Compiling module uart_transmitter_controller
+-- Compiling module system_controller
+-- Compiling module clock_gating_cell
+-- Compiling module system_top
+-- Compiling module system_top_tb
+
+Top level modules:
+	system_top_tb
+End time: 19:11:42 on Apr 24,2023, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0

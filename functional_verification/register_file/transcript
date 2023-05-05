@@ -1,0 +1,30 @@
+# vsim -c work.register_file_tb -do "run -all; quit -f" 
+# Start time: 19:20:58 on Apr 16,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.register_file_tb(fast)
+# run -all
+# --------------------- Test case (1) ---------------------
+# time = 50.00 ns
+# Test case (1) passed.
+# ----------------------------------------------------------------
+# ** Note: $stop    : register_file_tb.v(74)
+#    Time: 100 ns  Iteration: 0  Instance: /register_file_tb
+# Break at register_file_tb.v line 74
+# Stopped at register_file_tb.v line 74
+#  quit -f
+# End time: 19:20:59 on Apr 16,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
