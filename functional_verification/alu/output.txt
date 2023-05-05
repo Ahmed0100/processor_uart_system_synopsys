@@ -1,0 +1,7 @@
+Test case (1) passed.
+Test case (2) passed.
+Test case (3) passed.
+Test case (4) passed.
+Test case (5) passed.
+Test case (6) passed.
+Total: 6/6.

@@ -1,0 +1,43 @@
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -voptargs="+acc" work.bus_synchronizer_tb -do "add wave -position insertpoint  sim:/bus_synchronizer_tb/U_bus_synchronizer/clk sim:/bus_synchronizer_tb/U_bus_synchronizer/reset sim:/bus_synchronizer_tb/U_bus_synchronizer/asynchronous_data sim:/bus_synchronizer_tb/U_bus_synchronizer/synchronous_data; run -all" 
+# Start time: 19:30:57 on Apr 15,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.bus_synchronizer_tb(fast)
+# Loading work.bus_synchronizer(fast)
+# Loading work.register(fast)
+# add wave -position insertpoint  sim:/bus_synchronizer_tb/U_bus_synchronizer/clk sim:/bus_synchronizer_tb/U_bus_synchronizer/reset sim:/bus_synchronizer_tb/U_bus_synchronizer/asynchronous_data sim:/bus_synchronizer_tb/U_bus_synchronizer/synchronous_data
+# (vish-4014) No objects found matching '/bus_synchronizer_tb/U_bus_synchronizer/reset'.
+#  run -all
+# time = 0.00 ns, synchronous_data = xxxx
+# time = 12.00 ns, synchronous_data = 0000
+# time = 66.00 ns, synchronous_data = 0001
+# time = 90.00 ns, synchronous_data = 0011
+# time = 126.00 ns, synchronous_data = 0010
+# time = 150.00 ns, synchronous_data = 0110
+# time = 186.00 ns, synchronous_data = 0111
+# time = 210.00 ns, synchronous_data = 0101
+# time = 246.00 ns, synchronous_data = 0100
+# time = 270.00 ns, synchronous_data = 1100
+# time = 306.00 ns, synchronous_data = 1101
+# time = 330.00 ns, synchronous_data = 1111
+# time = 366.00 ns, synchronous_data = 1110
+# time = 390.00 ns, synchronous_data = 1010
+# time = 426.00 ns, synchronous_data = 1011
+# time = 450.00 ns, synchronous_data = 1001
+# time = 486.00 ns, synchronous_data = 1000
+# ** Note: $stop    : bus_synchronizer_tb.v(63)
+#    Time: 510 ns  Iteration: 0  Instance: /bus_synchronizer_tb
+# Break in Module bus_synchronizer_tb at bus_synchronizer_tb.v line 63

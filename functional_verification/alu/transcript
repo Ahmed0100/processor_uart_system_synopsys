@@ -1,0 +1,44 @@
+# vsim -c work.alu_tb -do "run -all; quit -f" 
+# Start time: 18:21:28 on Apr 16,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: alu_tb.v(98): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: alu_tb.v(113): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: alu_tb.v(98): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: alu_tb.v(113): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: alu_tb.v(98): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# ** Warning: alu_tb.v(113): (vopt-2121) Illegal concatenation of an unsized constant. Will treat it as a 32-bit value.
+# //  Questa Sim-64
+# //  Version 10.7c linux_x86_64 Aug 17 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.alu_tb(fast)
+# run -all
+# --------------------- Test case (1) ---------------------
+# ----------------------------------------------------------------
+# --------------------- Test case (2) ---------------------
+# ----------------------------------------------------------------
+# --------------------- Test case (3) ---------------------
+# ----------------------------------------------------------------
+# --------------------- Test case (4) ---------------------
+# ----------------------------------------------------------------
+# --------------------- Test case (5) ---------------------
+# ----------------------------------------------------------------
+# --------------------- Test case (6) ---------------------
+# ----------------------------------------------------------------
+# ** Note: $stop    : alu_tb.v(124)
+#    Time: 200 ns  Iteration: 0  Instance: /alu_tb
+# Break at alu_tb.v line 124
+# Stopped at alu_tb.v line 124
+#  quit -f
+# End time: 18:21:29 on Apr 16,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 6

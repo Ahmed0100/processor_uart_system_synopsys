@@ -1,0 +1,61 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/ICer/playground/processor_uart_system/functional_verification/clock_gating_cell
+T_opt
+!s110 1681551145
+VaadjCAe4AcBkWObi^nj@11
+Z1 04 17 4 work clock_gating_cell fast 0
+=1-000c2967fe8c-643a6f28-b0cff-4b60
+Z2 o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+Z4 OL;O;10.7c;67
+R0
+T_opt1
+!s110 1681551248
+VVC<V`1gDdLd<HnZDhVgYf1
+R1
+=1-000c2967fe8c-643a6f90-51bf2-4edb
+R2
+R3
+n@_opt1
+R4
+R0
+T_opt2
+!s110 1681551276
+V<JRaEB<nfg5LnA:h7>b@d1
+R1
+=1-000c2967fe8c-643a6fac-2d4e3-5071
+R2
+R3
+n@_opt2
+R4
+R0
+vclock_gating_cell
+!s110 1681551313
+!i10b 1
+!s100 =Vd@<m[^C30ImFC34QSU52
+Ic0=l;h9ZORL88m_HfEMG31
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1681476901
+8../../rtl/clock_gating_cell/clock_gating_cell.v
+F../../rtl/clock_gating_cell/clock_gating_cell.v
+L0 1
+OL;L;10.7c;67
+r1
+!s85 0
+31
+!s108 1681551313.000000
+!s107 ../../rtl/clock_gating_cell/clock_gating_cell.v|
+!s90 ../../rtl/clock_gating_cell/clock_gating_cell.v|
+!i113 0
+o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
