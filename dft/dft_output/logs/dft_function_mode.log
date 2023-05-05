@@ -1,0 +1,1580 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+# Modes of operation variable definitions
+set test_mode 1
+1
+set SE 0
+0
+# Create the setup file in function mode only because that is the mode that is verified in formal verification
+if {$test_mode == 0 && $SE == 0} {
+    # Formal verification setup file
+    set_svf "../dft_output/system_top.svf"
+}
+# Place the ICG cell
+cd "../../rtl/clock_gating_cell"
+exec tclsh place_ICG_cell.tcl -p
+cd "../../dft/scripts"
+# Add the path of the std cells and the rtl files to the search path variable
+lappend search_path "../../lib/std_cells"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver ../../lib/std_cells
+lappend search_path "../../rtl/system_top_dft" "../../rtl/uart/uart_transmitter"                     "../../rtl/uart/uart_receiver" "../../rtl/uart/uart"                     "../../rtl/ALU" "../../rtl/bus_synchronizer"                     "../../rtl/clock_divider" "../../rtl/clock_gating_cell"                     "../../rtl/data_synchronizer" "../../rtl/register_file"                     "../../rtl/reset_synchronizer" "../../rtl/system_controller"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver ../../lib/std_cells ../../rtl/system_top_dft ../../rtl/uart/uart_transmitter ../../rtl/uart/uart_receiver ../../rtl/uart/uart ../../rtl/ALU ../../rtl/bus_synchronizer ../../rtl/clock_divider ../../rtl/clock_gating_cell ../../rtl/data_synchronizer ../../rtl/register_file ../../rtl/reset_synchronizer ../../rtl/system_controller
+# Standard cells' libraries
+set SSLIB "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+set TTLIB "scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db"
+scmetro_tsmc_cl013g_rvt_tt_1p2v_25c.db
+set FFLIB "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db"
+scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+# Target library is the list of technology libraries of components to be used when compiling a design 
+set target_library [list $SSLIB]
+scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+# Link library is the list of design files and libraries used during linking
+set link_library [list * $SSLIB $FFLIB]  
+* scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+# Read rtl design files
+set file_format verilog
+verilog
+read_file -format $file_format "system_top_dft.v"
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'
+  Loading link library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'
+  Loading link library 'gtech'
+Loading verilog file '/home/ICer/playground/processor_uart_system/rtl/system_top_dft/system_top_dft.v'
+Detecting input file type automatically (-rtl or -netlist).
+Opening include file ../../rtl/system_controller/../uart/uart/uart.v
+Opening include file ../../rtl/uart/uart/../uart_receiver/uart_receiver.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/deserializer.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/data_sampler.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/edge_counter.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/start_bit_checker.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/stop_bit_checker.v
+Opening include file ../../rtl/uart/uart/../../../rtl/uart/uart_receiver/parity_bit_checker.v
+Opening include file ../../rtl/uart/uart/../uart_transmitter/uart_transmitter.v
+Opening include file ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v
+Opening include file ../../rtl/uart/uart_transmitter/serializer.v
+Opening include file ../../rtl/uart/uart_transmitter/parity_calculator.v
+Opening include file ../../rtl/uart/uart_transmitter/output_mux.v
+Opening include file ../../rtl/system_controller/../register_file/register_file.v
+Opening include file ../../rtl/system_controller/../clock_divider/clock_divider.v
+Opening include file ../../rtl/system_controller/../reset_synchronizer/reset_synchronizer.v
+Opening include file ../../rtl/system_controller/../data_synchronizer/data_synchronizer.v
+Opening include file ../../rtl/system_controller/../bus_synchronizer/bus_synchronizer.v
+Opening include file ../../rtl/system_controller/../alu/alu.v
+Opening include file ../../rtl/system_controller/../system_controller/system_controller.v
+Opening include file ../../rtl/system_controller/uart_receiver_controller.v
+Opening include file ../../rtl/system_controller/uart_transmitter_controller.v
+Opening include file ../../rtl/system_controller/../clock_gating_cell/clock_gating_cell.v
+Opening include file ../../rtl/system_controller/../system_top_dft/mux_2x1.v
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /home/ICer/playground/processor_uart_system/rtl/system_top_dft/system_top_dft.v
+Opening include file ../../rtl/system_top_dft/../uart/uart/uart.v
+Opening include file ../../rtl/uart/uart_transmitter/../uart_receiver/uart_receiver.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/deserializer.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/edge_counter.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/start_bit_checker.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/stop_bit_checker.v
+Opening include file ../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/parity_bit_checker.v
+Warning:  ../../rtl/uart/uart_transmitter/../uart_receiver/uart_receiver.v:44: the undeclared symbol 'edge_count_done' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../../rtl/uart/uart_transmitter/../uart_transmitter/uart_transmitter.v
+Opening include file ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v
+Opening include file ../../rtl/uart/uart_transmitter/serializer.v
+Opening include file ../../rtl/uart/uart_transmitter/parity_calculator.v
+Opening include file ../../rtl/uart/uart_transmitter/output_mux.v
+Opening include file ../../rtl/system_top_dft/../register_file/register_file.v
+Opening include file ../../rtl/system_top_dft/../clock_divider/clock_divider.v
+Opening include file ../../rtl/system_top_dft/../reset_synchronizer/reset_synchronizer.v
+Opening include file ../../rtl/system_top_dft/../data_synchronizer/data_synchronizer.v
+Opening include file ../../rtl/system_top_dft/../bus_synchronizer/bus_synchronizer.v
+Warning:  ../../rtl/system_top_dft/../bus_synchronizer/bus_synchronizer.v:41: A unnamed generate block with an LRM-defined name 'genblk1' is detected, which is incompatible with Verilog standard 2001 or 1995. (VER-944)
+Opening include file ../../rtl/system_top_dft/../alu/alu.v
+Opening include file ../../rtl/system_top_dft/../system_controller/system_controller.v
+Opening include file ../../rtl/system_controller/uart_receiver_controller.v
+Opening include file ../../rtl/system_controller/uart_transmitter_controller.v
+Opening include file ../../rtl/system_top_dft/../clock_gating_cell/clock_gating_cell.v
+Opening include file ../../rtl/system_top_dft/../system_top_dft/mux_2x1.v
+Warning:  /home/ICer/playground/processor_uart_system/rtl/system_top_dft/system_top_dft.v:265: the undeclared symbol 'multiplexed_uart_reset_n_synchronized' assumed to have the default net type, which is 'wire'. (VER-936)
+
+Statistics for case statements in always block at line 56 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            58            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 117 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           118            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_receiver_fsm line 35 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| data_receiption_state_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+
+Inferred memory devices in process
+	in routine uart_receiver_fsm line 47 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/uart_receiver_fsm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine deserializer line 11 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/deserializer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  parallel_data_reg  | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 18 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            23            |     auto/no      |
+===============================================
+
+Statistics for case statements in always block at line 49 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            52            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine data_sampler line 18 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/data_sampler.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     samples_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  sample_enable_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 21 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/edge_counter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            22            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine edge_counter line 11 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/edge_counter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   edge_count_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine start_bit_checker line 9 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/start_bit_checker.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| start_bit_error_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine stop_bit_checker line 9 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/stop_bit_checker.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| stop_bit_error_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 12 in file
+	'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/parity_bit_checker.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            18            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine parity_bit_checker line 12 in file
+		'../../rtl/uart/uart_transmitter/../../../rtl/uart/uart_receiver/parity_bit_checker.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  par_bit_error_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Warning:  ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v:81: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 50 in file
+	'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            53            |     no/auto      |
+===============================================
+Warning:  ../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v:120: Statement unreachable (Branch condition impossible to meet).  (VER-61)
+
+Statistics for case statements in always block at line 86 in file
+	'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            90            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_fsm line 29 in file
+		'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+| serial_data_transmission_state_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+==============================================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_fsm line 43 in file
+		'../../rtl/uart/uart_transmitter/uart_transmitter_fsm.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine serializer line 11 in file
+		'../../rtl/uart/uart_transmitter/serializer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    ser_data_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  serializer/15   |   8    |    1    |      3       |
+======================================================
+
+Inferred memory devices in process
+	in routine parity_calculator line 30 in file
+		'../../rtl/uart/uart_transmitter/parity_calculator.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     par_bit_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 12 in file
+	'../../rtl/uart/uart_transmitter/output_mux.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            13            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine register_file line 22 in file
+		'../../rtl/system_top_dft/../register_file/register_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| read_data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     memory_reg      | Flip-flop |  126  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     memory_reg      | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    read_data_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| register_file/46 |   16   |    8    |      4       |
+======================================================
+
+Inferred memory devices in process
+	in routine clock_divider line 22 in file
+		'../../rtl/system_top_dft/../clock_divider/clock_divider.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     counter_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   divided_clk_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   odd_toggle_reg    | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine reset_synchronizer line 10 in file
+		'../../rtl/system_top_dft/../reset_synchronizer/reset_synchronizer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine register line 12 in file
+		'../../rtl/system_top_dft/../bus_synchronizer/bus_synchronizer.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine data_synchronizer line 52 in file
+		'../../rtl/system_top_dft/../data_synchronizer/data_synchronizer.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| Q_pulse_generator_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine data_synchronizer line 64 in file
+		'../../rtl/system_top_dft/../data_synchronizer/data_synchronizer.v'.
+======================================================================================
+|       Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+======================================================================================
+| synchronous_data_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+======================================================================================
+
+Inferred memory devices in process
+	in routine data_synchronizer line 74 in file
+		'../../rtl/system_top_dft/../data_synchronizer/data_synchronizer.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+| synchronous_data_reg | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Inferred memory devices in process
+	in routine alu line 16 in file
+		'../../rtl/system_top_dft/../alu/alu.v'.
+================================================================================
+|    Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+================================================================================
+|    alu_result_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+| alu_result_valid_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+================================================================================
+
+Statistics for case statements in always block at line 50 in file
+	'../../rtl/system_controller/uart_receiver_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            57            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 129 in file
+	'../../rtl/system_controller/uart_receiver_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           139            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_receiver_controller line 42 in file
+		'../../rtl/system_controller/uart_receiver_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_receiver_controller line 110 in file
+		'../../rtl/system_controller/uart_receiver_controller.v'.
+========================================================================================
+|        Register Name         |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+========================================================================================
+| Q_write_address_register_reg | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+========================================================================================
+
+Inferred memory devices in process
+	in routine uart_receiver_controller line 117 in file
+		'../../rtl/system_controller/uart_receiver_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     counter_reg     | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Statistics for case statements in always block at line 59 in file
+	'../../rtl/system_controller/uart_transmitter_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            61            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 111 in file
+	'../../rtl/system_controller/uart_transmitter_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           112            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 172 in file
+	'../../rtl/system_controller/uart_transmitter_controller.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           174            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 38 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  current_state_reg  | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 46 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     message_reg     | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 156 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+===========================================================================================
+|          Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================================
+| uart_receiver_controller_en_reg | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+===========================================================================================
+
+Inferred memory devices in process
+	in routine uart_transmitter_controller line 164 in file
+		'../../rtl/system_controller/uart_transmitter_controller.v'.
+==========================================================================================
+|         Register Name          |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==========================================================================================
+| transmission_current_state_reg | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+==========================================================================================
+Presto compilation completed successfully.
+Current design is now '/home/ICer/playground/processor_uart_system/rtl/system_top_dft/uart_receiver_fsm.db:uart_receiver_fsm'
+Loaded 27 designs.
+Current design is 'uart_receiver_fsm'.
+uart_receiver_fsm deserializer data_sampler edge_counter start_bit_checker stop_bit_checker parity_bit_checker uart_receiver uart_transmitter_fsm serializer parity_calculator output_mux uart_transmitter uart register_file clock_divider reset_synchronizer register bus_synchronizer data_synchronizer alu uart_receiver_controller uart_transmitter_controller system_controller clock_gating_cell mux_2x1 system_top
+# Set top module
+current_design system_top
+Current design is 'system_top'.
+{system_top}
+# Link the top module with its submodules
+link 
+
+  Linking design 'system_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (27 designs)              /home/ICer/playground/processor_uart_system/rtl/system_top_dft/system_top.db, etc
+  scmetro_tsmc_cl013g_rvt_ss_1p08v_125c (library) /home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db
+  scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c (library) /home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db
+
+1
+# Constraints
+source -echo ./constraints.tcl
+# Modes of operation variable definitions
+set test_mode 1
+set SE 0
+# ------------------------ Clock Domain '1' (REF_CLK) --------------------
+set REF_CLK_NAME REF_CLK
+set REF_CLK_PERIOD 25
+set REF_CLK_SETUP_SKEW 0.2
+set REF_CLK_HOLD_SKEW 0.1
+set REF_CLK_RISE 0.1
+set REF_CLK_FALL 0.1
+set REF_CLK_LATENCY 0
+# Reference clock constraints
+create_clock -name $REF_CLK_NAME -period $REF_CLK_PERIOD -waveform "[expr $REF_CLK_PERIOD / 2] $REF_CLK_PERIOD" [get_ports reference_clk]
+Warning: Can't find port 'reference_clk' in design 'system_top'. (UID-95)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+set_clock_uncertainty -setup $REF_CLK_SETUP_SKEW [get_clocks $REF_CLK_NAME]
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+set_clock_uncertainty -hold $REF_CLK_HOLD_SKEW [get_clocks $REF_CLK_NAME]
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+set_clock_transition -rise $REF_CLK_RISE [get_clocks $REF_CLK_NAME]
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+set_clock_transition -fall $REF_CLK_FALL [get_clocks $REF_CLK_NAME]
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+set_clock_latency $REF_CLK_LATENCY [get_clocks $REF_CLK_NAME]
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+# ALU clock constraints
+if {$SE == 0} {
+    set ALU_CLK_NAME ALU_CLK
+    create_generated_clock -master_clock $REF_CLK_NAME -source [get_ports reference_clk]     -name $ALU_CLK_NAME -divide_by 1 [get_ports clock_gating_cell_inst/gated_clock]
+
+    set_clock_uncertainty -setup $REF_CLK_SETUP_SKEW [get_clocks $ALU_CLK_NAME]
+    set_clock_uncertainty -hold $REF_CLK_HOLD_SKEW [get_clocks $ALU_CLK_NAME]
+    set_clock_transition -rise $REF_CLK_RISE [get_clocks $ALU_CLK_NAME]
+    set_clock_transition -fall $REF_CLK_FALL [get_clocks $ALU_CLK_NAME]
+    set_clock_latency $REF_CLK_LATENCY [get_clocks $ALU_CLK_NAME]
+}
+Warning: Can't find port 'reference_clk' in design 'system_top'. (UID-95)
+Warning: Can't find port 'clock_gating_cell_inst/gated_clock' in design 'system_top'. (UID-95)
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Error: Value for list '-master_clock' must have 1 elements. (CMD-036)
+Error: Value for list '-source' must have 1 elements. (CMD-036)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+Warning: Can't find clock 'ALU_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+Warning: Can't find clock 'ALU_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+Warning: Can't find clock 'ALU_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+Warning: Can't find clock 'ALU_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+Warning: Can't find clock 'ALU_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+# -------------------------------------------------------------------------------
+# --------------------------- Clock Domain '2' (UART_CLK) -----------------------
+set UART_TRANSMITTER_CLK_NAME UART_TRANSMITTER_CLK
+set UART_CLK_PRESCALE 32
+set UART_CLK_NAME UART_CLK
+set UART_CLK_PERIOD 271
+set UART_CLK_SETUP_SKEW 0.2
+set UART_CLK_HOLD_SKEW 0.1
+set UART_CLK_RISE 0.1
+set UART_CLK_FALL 0.1
+set UART_CLK_LATENCY 0
+# UART clock constraints
+create_clock -name $UART_CLK_NAME -period $UART_CLK_PERIOD -waveform "0 [expr $UART_CLK_PERIOD / 2]" [get_ports uart_clk]
+set_clock_uncertainty -setup $UART_CLK_SETUP_SKEW [get_clocks $UART_CLK_NAME]
+set_clock_uncertainty -hold $UART_CLK_HOLD_SKEW [get_clocks $UART_CLK_NAME]
+set_clock_transition -rise $UART_CLK_RISE [get_clocks $UART_CLK_NAME]
+set_clock_transition -fall $UART_CLK_FALL [get_clocks $UART_CLK_NAME]
+set_clock_latency $UART_CLK_LATENCY [get_clocks $UART_CLK_NAME]
+# UART transmitter clock constraints
+create_generated_clock -master_clock $UART_CLK_NAME -source [get_ports UART_clk] -name $UART_TRANSMITTER_CLK_NAME -divide_by $UART_CLK_PRESCALE [get_ports clock_divider_inst/output_clk]
+Warning: Can't find port 'UART_clk' in design 'system_top'. (UID-95)
+Error: Value for list '-source' must have 1 elements. (CMD-036)
+set_clock_uncertainty -setup $UART_CLK_SETUP_SKEW [get_clocks $UART_TRANSMITTER_CLK_NAME]
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+set_clock_uncertainty -hold $UART_CLK_HOLD_SKEW [get_clocks $UART_TRANSMITTER_CLK_NAME]
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+set_clock_transition -rise $UART_CLK_RISE [get_clocks $UART_TRANSMITTER_CLK_NAME]
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+set_clock_transition -fall $UART_CLK_FALL [get_clocks $UART_TRANSMITTER_CLK_NAME]
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+set_clock_latency $UART_CLK_LATENCY [get_clocks $UART_TRANSMITTER_CLK_NAME]
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+# Input ports' constraints, Input delay is used in STA
+# All the inputs are inputs to the UART receiver
+set UART_clk_input_delay [expr 0.2 * $UART_CLK_PERIOD]
+set_input_delay $UART_clk_input_delay -clock $UART_CLK_NAME [get_port ser_data_in]
+# Output ports' constraints, output delay is used in STA
+set UART_transmitter_clk_output_delay [expr 0.2 * $UART_CLK_PRESCALE * $UART_CLK_PERIOD]
+set_output_delay $UART_transmitter_clk_output_delay -clock $UART_TRANSMITTER_CLK_NAME [get_port ser_data_out]
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+set UART_clk_output_delay [expr 0.2 * $UART_CLK_PERIOD]
+set_output_delay $UART_clk_output_delay -clock $UART_CLK_NAME [get_port par_error]
+set_output_delay $UART_clk_output_delay -clock $UART_CLK_NAME [get_port frame_error]
+# ------------------------ Clock Domain '3' (SCAN_CLK) --------------------
+set SCAN_CLK_NAME SCAN_CLK
+set SCAN_CLK_PERIOD 100
+set SCAN_CLK_SETUP_SKEW 0.2
+set SCAN_CLK_HOLD_SKEW 0.1
+set SCAN_CLK_RISE 0.1
+set SCAN_CLK_FALL 0.1
+set SCAN_CLK_LATENCY 0
+# Scan clock constraints
+create_clock -name $SCAN_CLK_NAME -period $SCAN_CLK_PERIOD -waveform "[expr $SCAN_CLK_PERIOD / 2] $SCAN_CLK_PERIOD" [get_ports scan_clk]
+set_clock_uncertainty -setup $SCAN_CLK_SETUP_SKEW [get_clocks $SCAN_CLK_NAME]
+set_clock_uncertainty -hold $SCAN_CLK_HOLD_SKEW [get_clocks $SCAN_CLK_NAME]
+set_clock_transition -rise $SCAN_CLK_RISE [get_clocks $SCAN_CLK_NAME]
+set_clock_transition -fall $SCAN_CLK_FALL [get_clocks $SCAN_CLK_NAME]
+set_clock_latency $SCAN_CLK_LATENCY [get_clocks $SCAN_CLK_NAME]
+if {$SE == 1} {
+    set ALU_CLK_NAME ALU_CLK
+    create_generated_clock -master_clock $SCAN_CLK_NAME -source [get_ports scan_clk]     -name $ALU_CLK_NAME -divide_by 1 [get_ports clock_gating_cell_inst/gated_clock]
+
+    set_clock_uncertainty -setup $SCAN_CLK_SETUP_SKEW [get_clocks $ALU_CLK_NAME]
+    set_clock_uncertainty -hold $SCAN_CLK_HOLD_SKEW [get_clocks $ALU_CLK_NAME]
+    set_clock_transition -rise $SCAN_CLK_RISE [get_clocks $ALU_CLK_NAME]
+    set_clock_transition -fall $SCAN_CLK_FALL [get_clocks $ALU_CLK_NAME]
+    set_clock_latency $SCAN_CLK_LATENCY [get_clocks $ALU_CLK_NAME]
+}
+# -------------------------------------------------------------------------------
+# Define asynchronous clocks
+set_clock_groups -asynchronous -group [get_clocks "$REF_CLK_NAME $ALU_CLK_NAME"] -group [get_clocks "$UART_CLK_NAME $UART_TRANSMITTER_CLK_NAME"] -group [get_clocks "$SCAN_CLK_NAME"]
+Warning: Can't find clock 'REF_CLK' in design 'system_top'. (UID-95)
+Warning: Can't find clock 'ALU_CLK' in design 'system_top'. (UID-95)
+Warning: Can't find clock 'UART_TRANSMITTER_CLK' in design 'system_top'. (UID-95)
+Error: Value for list '-group' must have 1 elements. (CMD-036)
+# Input ports driving cells, The set_driving_cell is used to estimate the input transition time which is used in calculating the output transition time and propagation delay of the gate connected to the input port
+set_driving_cell -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c -lib_cell BUFX2M -pin Y [get_port ser_data_in]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+# Output load
+set_load 0.5 [get_port ser_data_out]
+set_load 0.5 [get_port parity_error]
+Warning: Can't find port 'parity_error' in design 'system_top'. (UID-95)
+Error: Value for list 'objects' must have 1 elements. (CMD-036)
+set_load 0.5 [get_port frame_error]
+# Don't touch network (to prevent the tool from buffering the signals)
+set_dont_touch_network {ref_clk clock_gating_cell_inst/gated_clock uart_clk clock_divider_inst/output_clk scan_clk}
+Warning: Can't find object 'clock_gating_cell_inst/gated_clock' in design 'system_top'. (UID-95)
+# Operating conditons
+set_operating_conditions -min_library "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c" -min "scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c" -max_library "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c" -max "scmetro_tsmc_cl013g_rvt_ss_1p08v_125c"
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c' found in library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c'.
+Using operating conditions 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c' found in library 'scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c'.
+# Wire load model
+set_wire_load_model -name tsmc13_wl30 -library scmetro_tsmc_cl013g_rvt_ss_1p08v_125c
+# Minimize the area as much as possible
+set_max_area 0
+# Prevent assign statements in the generated netlist
+set_fix_multiple_port_nets -all -buffer_constants -feedthroughs1
+# Choose the mode of the operation of the system
+set_case_analysis $test_mode [get_port test_mode]
+1
+set_case_analysis $SE [get_port SE]
+1
+# Check the design consistency
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Sat Apr 29 18:16:36 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      7
+    Unconnected ports (LINT-28)                                     7
+
+Cells                                                              36
+    Cells do not drive (LINT-1)                                    16
+    Connected to power or ground (LINT-32)                          1
+    Leaf pins connected to undriven nets (LINT-58)                 16
+    Cells have undriven hier pins (LINT-59)                         3
+
+Nets                                                               11
+    Unloaded nets (LINT-2)                                         10
+    Undriven nets (LINT-3)                                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'alu', cell 'C348' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C349' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C350' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C351' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C376' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C378' does not drive any nets. (LINT-1)
+Warning: In design 'alu', cell 'C380' does not drive any nets. (LINT-1)
+Warning: In design 'clock_divider', cell 'C118' does not drive any nets. (LINT-1)
+Warning: In design 'uart_transmitter_fsm', cell 'C142' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'C316' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_19' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_20' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_21' does not drive any nets. (LINT-1)
+Warning: In design 'uart_receiver_fsm', cell 'B_22' does not drive any nets. (LINT-1)
+Warning: In design 'edge_counter', cell 'C102' does not drive any nets. (LINT-1)
+Warning: In design 'data_sampler', cell 'C132' does not drive any nets. (LINT-1)
+Warning: In design 'system_top', net 'multiplexed_uart_reset_n_sync' driven by pin 'mux_2x1_inst_uart_reset_sync/OUT' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'receiver_q_pulse_generator' driven by pin 'data_synchronizer_inst_0/Q_pulse_generator' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_prescale_config[6]' driven by pin 'register_file_inst/register3[6]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_prescale_config[7]' driven by pin 'register_file_inst/register3[7]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[2]' driven by pin 'register_file_inst/register2[2]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[3]' driven by pin 'register_file_inst/register2[3]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[4]' driven by pin 'register_file_inst/register2[4]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[5]' driven by pin 'register_file_inst/register2[5]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[6]' driven by pin 'register_file_inst/register2[6]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'uart_parity_config[7]' driven by pin 'register_file_inst/register2[7]' has no loads. (LINT-2)
+Warning: In design 'system_top', net 'multiplexed_uart_reset_n_synchronized' has no drivers.  Logic 0 assumed. (LINT-3)
+Warning: In design 'system_top', port 'SE' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', port 'SI[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', port 'SI[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', port 'SI[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', port 'SO[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', port 'SO[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', port 'SO[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'system_top', a pin on submodule 'clock_divider_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clk_divider_en' is connected to logic 1. 
+Warning: In design 'clock_divider', input pin 'A' of leaf cell 'I_4' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'clock_divider', input pin 'A' of leaf cell 'B_4' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'uart_transmitter_fsm', input pin 'A' of leaf cell 'I_5' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'uart_transmitter_fsm', input pin 'A' of leaf cell 'B_9' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'serializer', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'parity_calculator', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'uart_receiver_fsm', input pin 'A' of leaf cell 'I_2' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'uart_receiver_fsm', input pin 'A' of leaf cell 'B_18' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'deserializer', input pin 'A' of leaf cell 'I_8' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'edge_counter', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'edge_counter', input pin 'A' of leaf cell 'B_5' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'data_sampler', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'data_sampler', input pin 'A' of leaf cell 'B_13' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'parity_bit_checker', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'start_bit_checker', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'stop_bit_checker', input pin 'A' of leaf cell 'I_0' is connected to undriven net 'reset_n'.  (LINT-58)
+Warning: In design 'system_top', input pin 'reset_n' of hierarchical cell 'uart_inst' has one or more internal loads, but is not connected to any nets. 'Logic 0' is assumed. (LINT-59)
+Warning: In design 'system_top', input pin 'reset_n' of hierarchical cell 'clock_divider_inst' has one or more internal loads, but is not connected to any nets. 'Logic 0' is assumed. (LINT-59)
+Warning: In design 'system_top', input pin 'reset_n' of hierarchical cell 'data_synchronizer_inst_1' has one or more internal loads, but is not connected to any nets. 'Logic 0' is assumed. (LINT-59)
+1
+# Specify the scan chain design
+set_scan_configuration -clock_mixing no_mix -style multiplexed_flip_flop -replace true -max_length 100  
+Accepted scan configuration for modes: all_dft
+1
+set_app_var compile_seqmap_identify_shift_registers_with_synchronous_logic true
+true
+set_app_var compile_seqmap_identify_shift_registers_with_synchronous_logic_ascii true
+true
+set_app_var compile_seqmap_identify_shift_registers true
+true
+set_scan_state test_ready
+Information: Performing full identification of complex shift registers. (TEST-1190)
+Accepted scan state.
+1
+# Mapping, optimization, STA, and replacement of FFs with scan FFs
+compile_ultra -no_autoungroup -scan
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/dw_foundation.sldb'
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db"
+Library analysis succeeded.
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.1 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 54 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+Information: Uniquified 2 instances of design 'reset_synchronizer'. (OPT-1056)
+Information: Uniquified 4 instances of design 'bus_synchronizer'. (OPT-1056)
+Information: Uniquified 8 instances of design 'register'. (OPT-1056)
+Information: Uniquified 2 instances of design 'data_synchronizer'. (OPT-1056)
+Information: Uniquified 6 instances of design 'mux_2x1'. (OPT-1056)
+  Simplifying Design 'system_top'
+Information: Removing unused design 'reset_synchronizer_0'. (OPT-1055)
+
+Loaded alib file './alib-52/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'register_file'
+  Processing 'alu'
+Information: Added key list 'DesignWare' to design 'alu'. (DDB-72)
+ Implement Synthetic for 'alu'.
+  Processing 'alu_DW_div_uns_J1_0'
+  Processing 'uart_receiver_controller'
+  Processing 'uart_receiver_fsm'
+Information: Added key list 'DesignWare' to design 'uart_receiver_fsm'. (DDB-72)
+Information: The register 'data_receiption_state_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'current_state_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'current_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'current_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_receiption_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_receiption_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_receiption_state_reg[0]' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'uart_receiver_fsm'.
+  Processing 'uart_transmitter_controller'
+  Processing 'system_top'
+  Processing 'data_sampler'
+Information: The register 'sample_enable_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'samples_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'samples_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'samples_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'clock_divider'
+Information: Added key list 'DesignWare' to design 'clock_divider'. (DDB-72)
+Information: The register 'counter_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'counter_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'counter_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'counter_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'counter_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'odd_toggle_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'divided_clk_reg' is a constant and will be removed. (OPT-1206)
+ Implement Synthetic for 'clock_divider'.
+  Processing 'uart_transmitter_fsm'
+Information: Added key list 'DesignWare' to design 'uart_transmitter_fsm'. (DDB-72)
+Information: The register 'serial_data_transmission_state_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'current_state_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'current_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'serial_data_transmission_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'serial_data_transmission_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'serial_data_transmission_state_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'edge_counter'
+Information: The register 'edge_count_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'edge_count_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'edge_count_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'edge_count_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'edge_count_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'deserializer'
+Information: The register 'parallel_data_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'parallel_data_reg[7]' is a constant and will be removed. (OPT-1206)
+  Processing 'data_synchronizer_1'
+  Processing 'data_synchronizer_0'
+Information: The register 'Q_pulse_generator_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'synchronous_data_valid_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'uart_receiver'
+  Processing 'system_controller'
+  Processing 'parity_calculator'
+Information: The register 'par_bit_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'parity_bit_checker'
+Information: The register 'par_bit_error_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'uart_transmitter'
+  Processing 'uart'
+  Processing 'serializer'
+Information: The register 'ser_data_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'output_mux'
+  Processing 'reset_synchronizer_1'
+  Processing 'stop_bit_checker'
+Information: The register 'stop_bit_error_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'start_bit_checker'
+Information: The register 'start_bit_error_reg' is a constant and will be removed. (OPT-1206)
+  Processing 'register_0'
+Information: The register 'Q_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'register_2'
+  Processing 'bus_synchronizer_0'
+  Processing 'bus_synchronizer_1'
+  Processing 'bus_synchronizer_3'
+  Processing 'mux_2x1_1'
+ Implement Synthetic for 'mux_2x1_1'.
+  Processing 'mux_2x1_3'
+ Implement Synthetic for 'mux_2x1_3'.
+  Processing 'clock_gating_cell'
+  Processing 'mux_2x1_0'
+Memory usage for J1 task 282 Mbytes -- main task 282 Mbytes.
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1M' in the library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Automatic shift-register identification is enabled for scan. Not all registers will be scan-replaced. (OPT-467)
+Information: Removing unused design 'register_1'. (OPT-1055)
+Information: Removing unused design 'register_0'. (OPT-1055)
+Information: Removing unused design 'bus_synchronizer_0'. (OPT-1055)
+Information: Added key list 'DesignWare' to design 'uart_receiver'. (DDB-72)
+Information: Removing unused design 'uart_receiver_fsm'. (OPT-1055)
+Information: Removing unused design 'deserializer'. (OPT-1055)
+Information: Removing unused design 'edge_counter'. (OPT-1055)
+Information: Removing unused design 'data_sampler'. (OPT-1055)
+Information: Removing unused design 'parity_bit_checker'. (OPT-1055)
+Information: Removing unused design 'start_bit_checker'. (OPT-1055)
+Information: Removing unused design 'stop_bit_checker'. (OPT-1055)
+Information: Added key list 'DesignWare' to design 'uart_transmitter'. (DDB-72)
+Information: Removing unused design 'uart_transmitter_fsm'. (OPT-1055)
+Information: Removing unused design 'serializer'. (OPT-1055)
+Information: Removing unused design 'parity_calculator'. (OPT-1055)
+Information: Removing unused design 'output_mux'. (OPT-1055)
+Information: Added key list 'DesignWare' to design 'uart'. (DDB-72)
+Information: Removing unused design 'uart_receiver'. (OPT-1055)
+Information: Removing unused design 'mux_2x1_0'. (OPT-1055)
+Information: Removing unused design 'data_synchronizer_0'. (OPT-1055)
+Information: Complementing port 'enable' in design 'alu'.
+	 The new name of the port is 'enable_BAR'. (OPT-319)
+Information: Complementing port 'alu_en' in design 'system_controller'.
+	 The new name of the port is 'alu_en_BAR'. (OPT-319)
+Information: Complementing port 'alu_en' in design 'uart_receiver_controller'.
+	 The new name of the port is 'alu_en_BAR'. (OPT-319)
+Information: The register 'data_synchronizer_inst_0/U_bus_synchronizer/reg_inst_0/Q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/U_bus_synchronizer/genblk1[1].reg_inst/Q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/Q_pulse_generator_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_valid_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_synchronizer_inst_0/synchronous_data_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'bus_synchronizer_inst_1/reg_inst_0/Q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'bus_synchronizer_inst_1/genblk1[1].reg_inst/Q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'bus_synchronizer_inst_0/reg_inst_0/Q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'bus_synchronizer_inst_0/genblk1[1].reg_inst/Q_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/counter_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_transmitter_controller_inst/transmission_current_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_transmitter_controller_inst/transmission_current_state_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_transmitter_controller_inst/uart_receiver_controller_en_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/current_state_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/current_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/current_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/counter_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/Q_write_address_register_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/Q_write_address_register_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/Q_write_address_register_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_receiver_controller_inst/Q_write_address_register_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'alu_inst/alu_result_valid_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/read_data_valid_reg' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_transmitter_controller_inst/current_state_reg[0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_transmitter_controller_inst/current_state_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'system_controller_inst/uart_transmitter_controller_inst/current_state_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[3][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[3][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[3][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[3][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[3][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[1][7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][0]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][4]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'register_file_inst/memory_reg[0][7]' is a constant and will be removed. (OPT-1206)
+Information: Removing unused design 'uart_transmitter'. (OPT-1055)
+Information: Removing unused design 'register_2'. (OPT-1055)
+Information: Removing unused design 'register_3'. (OPT-1055)
+Information: Removing unused design 'bus_synchronizer_1'. (OPT-1055)
+Information: Removing unused design 'register_4'. (OPT-1055)
+Information: Removing unused design 'register_5'. (OPT-1055)
+Information: Removing unused design 'register_7'. (OPT-1055)
+Information: Removing unused design 'register_6'. (OPT-1055)
+Information: Removing unused design 'uart_transmitter_controller'. (OPT-1055)
+Information: Removing unused design 'uart_receiver_controller'. (OPT-1055)
+Information: Removing unused design 'register_file'. (OPT-1055)
+Information: Removing unused design 'bus_synchronizer_3'. (OPT-1055)
+Information: Removing unused design 'bus_synchronizer_2'. (OPT-1055)
+Information: Removing unused design 'data_synchronizer_1'. (OPT-1055)
+Information: Added key list 'DesignWare' to design 'system_top'. (DDB-72)
+Information: Removing unused design 'uart'. (OPT-1055)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Updating design information... (UID-85)
+  Mapping Optimization (Phase 1)
+Information: Removing unused design 'system_controller'. (OPT-1055)
+Information: Removing unused design 'alu'. (OPT-1055)
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+
+  Beginning Isolate Ports
+  -----------------------
+
+  Beginning Delay Optimization
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06     157.7      0.00       0.0       0.2                           96148.5391
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+    0:00:06     157.7      0.00       0.0       0.0                           100658.8516
+    0:00:06     157.7      0.00       0.0       0.0                           100658.8516
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:06     157.7      0.00       0.0       0.0                           100658.8516
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+    0:00:06     157.7      0.00       0.0       0.0                           100658.8516
+    0:00:06     157.7      0.00       0.0       0.0                           100658.8516
+    0:00:06     157.7      0.00       0.0       0.0                           100658.8516
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:07     175.3      0.00       0.0       0.0                           122613.9297
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+# Preclock Measure Protocol (default protocol)
+set test_default_period 100
+100
+set test_default_delay 0
+0
+set test_default_bidir_delay 0
+0
+set test_default_strobe 20
+20
+set test_default_strobe_width 0
+0
+# Define dft ports
+set_dft_signal -port [get_ports scan_clk]   -type ScanClock   -view existing_dft  -timing {50 100}
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -port [get_ports scan_reset] -type Reset       -view existing_dft  -active_state 0
+Warning: Can't find port 'scan_reset' in design 'system_top'. (UID-95)
+Error: Value for list '-port' must have 1 elements. (CMD-036)
+0
+set_dft_signal -port [get_ports test_mode]  -type Constant    -view existing_dft  -active_state 1 
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -port [get_ports test_mode]  -type TestMode    -view spec          -active_state 1 
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -port [get_ports SE]         -type ScanEnable  -view spec          -active_state 1   -usage scan
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -port [get_ports SI]         -type ScanDataIn  -view spec
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -port [get_ports SO]         -type ScanDataOut -view spec
+Accepted dft signal specification for modes: all_dft
+1
+# Enable enahnced dft_drc reporting
+set test_disable_enhanced_dft_drc_reporting false
+false
+# Create the test protocol based on specifications using set_dft_signal to check whether
+# user specified values are consistent with each other
+create_test_protocol
+In mode: all_dft...
+
+Information: Starting test protocol creation. (TEST-219)
+  ...reading user specified clock signals...
+Information: Identified system/test clock port scan_clk (50.0,100.0). (TEST-265)
+  ...reading user specified asynchronous signals...
+1
+# Report the violations (i.e flops that can't be included in the scan chain)
+dft_drc -verbose
+In mode: all_dft...
+  Pre-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+
+-------------------------------------------------------------------------
+DRC Violations which will prevent scan insertion
+-------------------------------------------------------------------------
+
+ Warning: Reset input RN of DFF reset_synchronizer_inst_0/Q_reg[0] was not controlled. (D3-1)
+ Warning: Reset input RN of DFF reset_synchronizer_inst_0/Q_reg[1] was not controlled. (D3-2)
+Warning: Cell clock_gating_cell_inst/U_ICG_cell has constant 1 value. (TEST-505)
+
+
+
+-------------------------------------------------------------------------
+Summary of all DFT DRC violations
+-------------------------------------------------------------------------
+
+3 DRC VIOLATIONS WHICH WILL PREVENT SCAN INSERTION 
+     2 DFF set/reset line not controlled violations (D3)
+     1 Cell is constant 1 violation (TEST-505)
+
+3 TOTAL VIOLATIONS 
+
+Warning: Violations occurred during test design rule checking. (TEST-124)
+
+-----------------------------------------------------------------------------------------   
+ Sequential Cell Report:       Sequential       Core             Core                 
+                               Cells            Segments         Segment Cells        
+-----------------------------------------------------------------------------------------
+ Sequential Elements Detected:  3                  0                   0                       
+ Clock Gating Cells          :  0                                                        
+ Synchronizing Cells         :  0                                                        
+ Non-Scan Elements           :  0                                                        
+ Excluded Scan Elements      :  0                  0                   0                       
+ Violated Scan Elements      :  3                  0                   0                       
+ (Traced) Scan Elements      :  0       (  0.0%)   0       (  0.0%)    0       (  0.0%)      
+-----------------------------------------------------------------------------------------
+
+SEQUENTIAL CELLS WITH VIOLATIONS (3 Cells) 
+         reset_synchronizer_inst_0/Q_reg[0]
+         reset_synchronizer_inst_0/Q_reg[1]
+         clock_gating_cell_inst/U_ICG_cell
+
+CELL WITH CONSTANT 1 VALUE 
+         clock_gating_cell_inst/U_ICG_cell
+
+
+Information: Test design rule checking completed. (TEST-123)
+1
+# Report the scan chain architecture to be built instead of building it
+preview_dft -show all
+  Information: Using test design rule information from previous dft_drc run.
+  Architecting Scan Chains
+Warning: reset_synchronizer_inst_0/Q_reg[0] does not have scan enable pin. Ignoring DFT Connectivity specification for this cell. 
+Warning: reset_synchronizer_inst_0/Q_reg[1] does not have scan enable pin. Ignoring DFT Connectivity specification for this cell. 
+
+****************************************
+Preview_dft report
+For    : 'Insert_dft' command
+Design : system_top
+Version: O-2018.06-SP1
+Date   : Sat Apr 29 18:17:55 2023
+****************************************
+
+Number of chains: 0
+Scan methodology: full_scan
+Scan style: multiplexed_flip_flop
+Clock domain: no_mix
+
+
+No chains
+
+
+****************************************
+
+No user-defined segments
+
+
+No multibit segments
+
+
+****************************************
+
+No cells have scan true
+
+No cells have scan false
+
+
+No tristate nets.
+
+No bidirectionals.
+
+
+************ Test Point Plan Report ************
+Total number of test points  : 0
+Number of Autofix test points: 0
+Number of Wrapper test points: 0
+Number of test modes         : 0
+Number of test point enables : 0
+Number of data sources       : 0
+Number of data sinks         : 0
+**************************************************
+
+Dft signals:
+ TestMode: test_mode (no hookup pin)
+1
+# Build the scan chains
+insert_dft
+  Information: Using test design rule information from previous dft_drc run.
+  Architecting Scan Chains
+Warning: reset_synchronizer_inst_0/Q_reg[0] does not have scan enable pin. Ignoring DFT Connectivity specification for this cell. 
+Warning: reset_synchronizer_inst_0/Q_reg[1] does not have scan enable pin. Ignoring DFT Connectivity specification for this cell. 
+Information: Scan insertion did not build any scan chains. (TEST-176)
+Information: Scan routing is not complete. Signals 'serial or scan_enables' need to be routed. (TEST-899)
+Information: DFT insertion was not successful. There were unrecoverable processing errors. (TEST-211)
+0
+# Make a second optimization phase after building the scan chains
+compile_ultra -no_autoungroup -scan -incremental
+Warning: DesignWare synthetic library dw_foundation.sldb is added to the synthetic_library in the current command. (UISN-40)
+Information: Performing power optimization. (PWR-850)
+Alib files are up-to-date.
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+
+Information: There are 30 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db.alib'
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'HOLDX1M' in the library 'scmetro_tsmc_cl013g_rvt_ss_1p08v_125c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Automatic shift-register identification is enabled for scan. Not all registers will be scan-replaced. (OPT-467)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:01     175.3      0.00       0.0       0.0                           122613.9297
+    0:00:01     175.3      0.00       0.0       0.0                           122613.9297
+
+  Beginning Mapping Optimizations  (Ultra High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+    0:00:01     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:01     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:01     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:01     157.7      0.00       0.0       0.0                           98343.0781
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:01     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:01     157.7      0.00       0.0       0.0                           98343.0781
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     157.7      0.00       0.0       0.0                           97890.9297
+    0:00:02     175.3      0.00       0.0       0.0                           114196.8047
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:02    4095.3      0.00       0.0       0.0                           114196.8047
+    0:00:02    4095.3      0.00       0.0       0.0                           114196.8047
+    0:00:02    4095.3      0.00       0.0       0.0                           114196.8047
+    0:00:02    4095.3      0.00       0.0       0.0                           114196.8047
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ss_1p08v_125c.db'
+Loading db file '/home/ICer/playground/processor_uart_system/lib/std_cells/scmetro_tsmc_cl013g_rvt_ff_1p32v_m40c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+1
+# Show the test coverage statistics of the design after dft insertion
+dft_drc -coverage_estimate
+In mode: all_dft...
+  Pre-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  	...checking for scan equivalents...
+  ...checking vector rules...
+  ...checking pre-dft rules...
+
+
+-------------------------------------------------------------------------
+DRC Violations which will prevent scan insertion
+-------------------------------------------------------------------------
+
+ Warning: Reset input RN of DFF reset_synchronizer_inst_0/Q_reg[0] was not controlled. (D3-1)
+Information: There is 1 other cell with the same violation. (TEST-173)
+Warning: Cell clock_gating_cell_inst/U_ICG_cell has constant 1 value. (TEST-505)
+
+
+
+-------------------------------------------------------------------------
+Summary of all DFT DRC violations
+-------------------------------------------------------------------------
+
+3 DRC VIOLATIONS WHICH WILL PREVENT SCAN INSERTION 
+     2 DFF set/reset line not controlled violations (D3)
+     1 Cell is constant 1 violation (TEST-505)
+
+3 TOTAL VIOLATIONS 
+
+Warning: Violations occurred during test design rule checking. (TEST-124)
+
+-----------------------------------------------------------------------------------------   
+ Sequential Cell Report:       Sequential       Core             Core                 
+                               Cells            Segments         Segment Cells        
+-----------------------------------------------------------------------------------------
+ Sequential Elements Detected:  3                  0                   0                       
+ Clock Gating Cells          :  0                                                        
+ Synchronizing Cells         :  0                                                        
+ Non-Scan Elements           :  0                                                        
+ Excluded Scan Elements      :  0                  0                   0                       
+ Violated Scan Elements      :  3                  0                   0                       
+ (Traced) Scan Elements      :  0       (  0.0%)   0       (  0.0%)    0       (  0.0%)      
+-----------------------------------------------------------------------------------------
+
+
+Information: Test design rule checking completed. (TEST-123)
+  Warning: Test coverage estimation is not supported for pre-scan designs.
+  Information: '-coverage_estimation' option is ignored for this drc run.
+1
+if {$test_mode == 0 && $SE == 0} {
+    # Generate synthesis reports
+    report_power -hierarchy > "../dft_output/reports/power.rpt"
+    report_area -hierarchy > "../dft_output/reports/area.rpt"
+    report_constraint -all_violators > "../dft_output/reports/constraints.rpt"
+    report_port > "../dft_output/reports/ports.rpt"
+    
+    # Generate Verilog gate level netlist
+    write_file -format verilog -hierarchy -output "../dft_output/netlist/system_top_netlist.v"
+    # Generate DDC gate level netlist
+    write_file -format ddc -hierarchy -output "../dft_output/netlist/system_top_netlist.ddc"
+    
+    # Generate SDF (Standard Delay Format) file
+    write_sdf "../dft_output/system_top.sdf"
+    
+    # Generate timing reports for function mode of operation
+    report_timing -max_paths 50 -delay_type max > "../dft_output/reports/timing_reports/function_mode/setup.rpt"
+    report_timing -max_paths 50 -delay_type min > "../dft_output/reports/timing_reports/function_mode/hold.rpt"
+    # Generate SDC (Synopsys Design Constraints) file
+    write_sdc -nosplit "../dft_output/reports/timing_reports/function_mode/system_top.sdc"
+    # Generate clocks report
+    report_clock -attributes > "../dft_output/reports/timing_reports/function_mode/clocks.rpt"
+
+} elseif {$test_mode == 1 && $SE == 1} {
+    # Generate timing reports for test scan mode of operation
+    report_timing -max_paths 50 -delay_type max > "../dft_output/reports/timing_reports/test_scan_mode/setup.rpt"
+    report_timing -max_paths 50 -delay_type min > "../dft_output/reports/timing_reports/test_scan_mode/hold.rpt"
+    # Generate SDC (Synopsys Design Constraints) file
+    write_sdc -nosplit "../dft_output/reports/timing_reports/test_scan_mode/system_top.sdc"
+    # Generate clocks report
+    report_clock -attributes > "../dft_output/reports/timing_reports/test_scan_mode/clocks.rpt"
+
+} elseif {$test_mode == 1 && $SE == 0} {
+    # Generate timing reports for test capture mode of operation
+    report_timing -max_paths 50 -delay_type max > "../dft_output/reports/timing_reports/test_capture_mode/setup.rpt"
+    report_timing -max_paths 50 -delay_type min > "../dft_output/reports/timing_reports/test_capture_mode/hold.rpt"
+    # Generate SDC (Synopsys Design Constraints) file
+    write_sdc -nosplit "../dft_output/reports/timing_reports/test_capture_mode/system_top.sdc"
+    # Generate clocks report
+    report_clock -attributes > "../dft_output/reports/timing_reports/test_capture_mode/clocks.rpt"
+}
+# Remove the ICG cell
+cd "../../rtl/clock_gating_cell"
+exec tclsh place_ICG_cell.tcl -r
+cd "../../dft/scripts"
+# Close the design compiler tool
+exit
+Memory usage for main task 313 Mbytes.
+Memory usage for this session 313 Mbytes.
+CPU usage for this session 82 seconds ( 0.02 hours ).
+
+Thank you...

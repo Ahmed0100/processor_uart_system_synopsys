@@ -1,0 +1,21 @@
+ 
+****************************************
+Report : clocks
+Design : system_top
+Version: O-2018.06-SP1
+Date   : Sat Apr 29 18:18:40 2023
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+SCAN_CLK       100.00   {50 100}                      {scan_clk}
+UART_CLK       271.00   {0 135}                       {uart_clk}
+--------------------------------------------------------------------------------
+1
